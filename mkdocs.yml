@@ -2,6 +2,7 @@ site_name: Arseny's Cheatsheet
 site_url: 'https://arsenyafonin.github.io/cheatsheet/'
 docs_dir: markdown
 site_dir: docs
+site_favicon: 'favicon.ico'
 
 pages:
 - Введение: 'index.md'
