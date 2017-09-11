@@ -1,0 +1,32 @@
+site_name: Arseny's Cheatsheet
+docs_dir: markdown
+site_dir: docs
+
+pages:
+- Введение: 'intro.md'
+- Python:
+  - Работа с файлами: 'python.md'
+- Markdown: 'instructions.md'
+- Система:
+  - Горячие клавиши: 'shortcuts.md'
+- Преднастройка:
+    - Atom: 'atom.md'
+    - AWS CLI: 'aws-cli.md'
+    - Windows 10: 'system.md'
+
+# Documentation and theme
+theme: 'material'
+theme_dir: 'theme'
+
+# Options
+markdown_extensions:
+  - admonition
+  - toc(permalink=true)
+  - codehilite
+
+extra:
+  palette:
+    primary: 'cyan'
+    accent: 'cyan'
+
+extra_css: [extra.css]

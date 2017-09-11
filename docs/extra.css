@@ -1,0 +1,73 @@
+/* Readthedocs Styles */
+
+/*h3 {
+  color: black;
+  font-size: 135%;
+  font-weight: 700 !important;
+  font-family: Circe-ExtraBold, sans-serif !important;
+}
+
+.wy-side-nav-search {
+  background-color: #343131;
+}
+
+.wy-side-nav-search input[type=text] {
+  border-color: #343131 !important;
+}
+
+
+hr {
+  border-top-width: 0;
+}
+
+.section ul {
+  margin-top: -12px !important;
+}
+
+.section ul ul {
+  margin-top: 0 !important;
+}
+*/
+
+/* Material for MkDocs Styles */
+
+.md-footer-meta {
+  background: rgba(0,0,0,.87) !important; /*Серый footer вместо черного*/
+}
+
+.md-footer-nav {
+  margin-top: 100px;
+}
+
+.md-typeset code { /* Настройка отображения ярлыков вида `code` в Markdown */
+  background-color: rgba(0,191,165,.15);
+  box-shadow: 0.29412em 0 0 rgba(0,191,165,.15), -0.29412em 0 0 rgba(0,191,165,.15);
+  margin: 0 .4em;
+}
+
+.md-typeset h4 {
+  margin-bottom: 0;
+}
+
+.admonition p {
+  margin-top: 0;
+}
+
+/* Custom admolition icons */
+
+/* Test: put '!!! video' in Markdown; */
+.admonition.video p {
+  display: none;
+}
+
+.admonition.video {
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+}
+
+.admonition.video:before {
+  margin-top: 4px;
+  content: url(play.svg);
+}
