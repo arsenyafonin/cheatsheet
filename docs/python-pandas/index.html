@@ -8,7 +8,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://arsenyafonin.github.io/cheatsheet/atom/">
+        <link rel="canonical" href="https://arsenyafonin.github.io/cheatsheet/python-pandas/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Atom - Arseny's Cheatsheet</title>
+        <title>Анализ данных - Arseny's Cheatsheet</title>
       
     
     
@@ -80,11 +80,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Преднастройка
+                  Python
                 </span>
               
             
-            Atom
+            Анализ данных
           
         </span>
       </div>
@@ -157,10 +157,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Python
@@ -200,11 +202,61 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../python-pandas/" title="Анализ данных" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Анализ данных
+      </label>
+    
+    <a href="./" title="Анализ данных" class="md-nav__link md-nav__link--active">
       Анализ данных
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Загрузка данных" class="md-nav__link">
+    Загрузка данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Описание данных" class="md-nav__link">
+    Описание данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="Преобразование данных" class="md-nav__link">
+    Преобразование данных
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -265,12 +317,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Преднастройка
@@ -286,18 +336,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-    <a href="./" title="Atom" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
       Atom
     </a>
-    
   </li>
 
         
@@ -344,6 +387,36 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
+  
+    <label class="md-nav__title" for="toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Загрузка данных" class="md-nav__link">
+    Загрузка данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="Описание данных" class="md-nav__link">
+    Описание данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="Преобразование данных" class="md-nav__link">
+    Преобразование данных
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -356,32 +429,58 @@
               
                 
                 
-                  <h1>Atom</h1>
-                
-                <p>Настройка дружелюбных тем:</p>
-<ul>
-<li>File/Settings/Themes &gt; Choose a Theme &gt; UI Theme: One Light</li>
-<li>File/Settings/Themes &gt; Choose a Theme &gt; Syntax Theme: One Light</li>
-</ul>
-<p>Настройка проверки правописания для русского языка:</p>
-<ul>
-<li>Packages/Spell Check &gt; Settings &gt; Locales: <code>en-US, ru-RU</code></li>
-</ul>
-<p>Отключение Welcome вкладок при старте:</p>
-<ul>
-<li>Packages/Welcome &gt; Disable</li>
-</ul>
-<p>Устранение конфликта горячих клавиш и <a href="http://ilyabirman.ru/projects/typography-layout/">раскладки Бирмана</a> на Windows:</p>
-<ul>
-<li>File/Keymap... &gt; Добавить в конец файла <code>keymap.cson</code>:</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="s2">&quot;atom-workspace atom-pane&quot;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&quot;ctrl-alt--&quot;</span><span class="p">:</span> <span class="s2">&quot;unset!&quot;</span>
+                <h1 id="pandas">Анализ данных с модулем pandas<a class="headerlink" href="#pandas" title="Permanent link">&para;</a></h1>
+<h3 id="_1">Загрузка данных<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Импорт данных из pickle файлов:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">pickle_path</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/user/Google Диск/pickle_file.pkl&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">pickle_path</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+
+<span class="n">pickle_url</span> <span class="o">=</span> <span class="s1">&#39;https://example.com/pickle_file.pkl&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pickle_url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+</pre></div>
+
+
+<h3 id="_2">Описание данных<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Вернет первые 5 рядов</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span> <span class="c1"># Вернет описание типов данных по колонкам</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="c1"># Вернет список всех колонок фрейма</span>
+</pre></div>
+
+
+<h3 id="_3">Преобразование данных<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Преобразование колонок:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">])</span>
+
+<span class="n">colnames</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;A_new&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;B_new&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;D_new&#39;</span>
 <span class="p">}</span>
 
-<span class="s2">&quot;.platform-win32 atom-text-editor&quot;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&quot;ctrl-alt-,&quot;</span><span class="p">:</span> <span class="s2">&quot;unset!&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;ctrl-alt-.&quot;</span><span class="p">:</span> <span class="s2">&quot;unset!&quot;</span><span class="p">}</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">colnames</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="c1"># Вернет [&#39;A_new&#39;, &#39;B_new&#39;, &#39;C&#39;]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reindex_axis</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Сортировка колонок</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;С&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Удаление колонки &#39;С&#39;</span>
+</pre></div>
+
+
+<p>Обработка данных:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Замена пропусков &#39;А&#39; данным из &#39;B&#39;</span>
 </pre></div>
                 
                   
@@ -401,7 +500,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../shortcuts/" title="Горячие клавиши" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../python-os/" title="Работа с файлами" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -410,19 +509,19 @@
                 <span class="md-footer-nav__direction">
                   Назад
                 </span>
-                Горячие клавиши
+                Работа с файлами
               </span>
             </div>
           </a>
         
         
-          <a href="../aws-cli/" title="AWS CLI" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../instructions/" title="Markdown" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Вперед
                 </span>
-                AWS CLI
+                Markdown
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

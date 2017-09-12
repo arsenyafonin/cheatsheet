@@ -7,7 +7,9 @@ site_favicon: 'favicon.ico'
 pages:
 - Введение: 'index.md'
 - Python:
-  - Работа с файлами: 'python.md'
+  - Импорт модулей: 'python-import.md'
+  - Работа с файлами: 'python-os.md'
+  - Анализ данных: 'python-pandas.md'
 - Markdown: 'instructions.md'
 - Система:
   - Горячие клавиши: 'shortcuts.md'

@@ -33,3 +33,21 @@ for filename in glob.glob("*.zip"):
 ``` python
 os.unlink(filepath)
 ```
+***
+
+Работа с модулем io:
+``` python
+import io
+
+bytes_buffer = io.BytesIO() # Создание бинарного файла в RAM
+bytes_buffer.write(...) # Запись данные в файл
+print(bytes_buffer.tell()) # Печать размера файла, вернет реальный размер
+
+bytes_buffer.seek(0) # Перемещение к началу файла
+print(bytes_buffer.tell()) # Вернет 0
+
+bytes_buffer.read() # Чтение данных из файла с последнего места до конца
+print(bytes_buffer.tell()) # Вернет реальный размер
+
+bytes_buffer.close() # Закрытие файла для записи или чтения
+```
