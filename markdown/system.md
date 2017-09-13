@@ -10,7 +10,10 @@
     4. Домашняя группа?
 3. Изменение иконок по умолчанию с помощью regedit:
     1. [Папок](https://www.ampercent.com/how-to-change-default-folder-icon-in-windows-10-without-any-software/16780/)
-    1. [Дисков](http://winaero.com/blog/change-drive-icon-in-windows-10-with-a-custom-ico-file/)
+    2. [Дисков](http://winaero.com/blog/change-drive-icon-in-windows-10-with-a-custom-ico-file/)
+    3. [Различных типов файлов](http://www.nirsoft.net/utils/file_types_manager.html):
+        1. .bat
+        2. .jpeg, .jpg, .png, .tif, .tiff, .gif, .bmp
 4. Изменение размеров скроллов и меню
 5. Восстановление классического Alt-Tab меню через Winaero
 6. Изменение иконок часто используемых программ:

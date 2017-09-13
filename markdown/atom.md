@@ -24,3 +24,13 @@
   "ctrl-alt-,": "unset!",
   "ctrl-alt-.": "unset!"}
 ```
+
+Добавление горячих клавиш для навигации между вкладками:
+
+* File/Keymap... > Добавить в конец файла `keymap.cson`:
+
+``` json
+"body": {
+  "alt-d": "pane:show-previous-item",
+  "alt-f": "pane:show-next-item"}
+```

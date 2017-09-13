@@ -11,6 +11,7 @@ pages:
   - Работа с файлами: 'python-os.md'
   - Анализ данных: 'python-pandas.md'
 - Markdown: 'instructions.md'
+- Command Prompt | Bash: 'cmd-bash.md'
 - Система:
   - Горячие клавиши: 'shortcuts.md'
 - Преднастройка:
