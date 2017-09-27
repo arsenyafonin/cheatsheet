@@ -28,3 +28,31 @@
 8. Удаление значков для ярлыка via Winaero Tweaker
 9. Измение значка для «Быстрого доступа» via Winaero Tweaker
 10. Отключение подписей значков рабочего стола via Window FX
+
+### Настройка иконок
+
+#### Изменение системных значков
+
+Персонализация > Темы > Сопутствующие параметры > Параметры значков рабочего стола:
+
+1. Этот компьютер > `shut_down_with_computer.ico`
+2. Корзина (полная) > `copland-4-recycle-bin.ico`
+3. Корзина (пустая) > `copland-4-recycle-bin.ico`
+
+#### Изменение значков программ
+
+С помощью Resource Hacker:
+
+1. NexusFile.exe > `briefcase.ico`
+2. Simplenote.exe > `template_empty.ico`
+
+#### Изменение значков ярлыков рабочего стола
+
+Свойства > Ярлык > Сменить значок...:
+
+1. sleep.lnk (hypernate.bat) > `monitor_moon.ico`
+2. turnoff.lnk (turnoff.bat) > `battery.ico`
+3. Anaconda Navigator.lnk > `expand_hierarchial_array.ico`
+4. HandBrake.lnk > `multimedia.ico`
+5. Skype.lnk > `modem.ico`
+6. Winaero Tweaker.lnk > `clean_drive.ico`

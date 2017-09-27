@@ -251,6 +251,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="Фильтрация данных" class="md-nav__link">
+    Фильтрация данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="Дополнение внешними аттрибутами" class="md-nav__link">
+    Дополнение внешними аттрибутами
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -282,15 +296,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../cmd-bash/" title="Command Prompt | Bash" class="md-nav__link">
+      Command Prompt | Bash
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Система
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Система
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -320,13 +346,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Преднастройка
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Преднастройка
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -414,6 +440,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="Фильтрация данных" class="md-nav__link">
+    Фильтрация данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="Дополнение внешними аттрибутами" class="md-nav__link">
+    Дополнение внешними аттрибутами
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -481,6 +521,54 @@
 
 <p>Обработка данных:</p>
 <div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Замена пропусков &#39;А&#39; данным из &#39;B&#39;</span>
+</pre></div>
+
+
+<h3 id="_4">Фильтрация данных<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Использование масок:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="c1"># Выбор по без маски</span>
+
+<span class="n">mask_1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col_1&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;value_1&#39;</span>
+<span class="n">mask_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col_2&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;value_2&#39;</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask_1</span> <span class="o">&amp;</span> <span class="n">mask_2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Выбор с масками</span>
+</pre></div>
+
+
+<p>Работа с временными данными:</p>
+<div class="codehilite"><pre><span></span><span class="n">mask_date</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2016-02-01&#39;</span> <span class="c1"># Выбор по дате</span>
+
+<span class="n">month</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">mask_date</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="n">month</span>
+<span class="c1"># Выбор по месяцу (%m), году (%Y) и пр.</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;01&#39;</span><span class="p">,</span>\
+                             <span class="n">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Вычленение месяца из даты</span>
+</pre></div>
+
+
+<p>Обработка NA:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;col_1&#39;</span><span class="p">,</span> <span class="s1">&#39;col_2&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># Удаление рядов с NA в колонках</span>
+</pre></div>
+
+
+<h3 id="_5">Дополнение внешними аттрибутами<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">attrFinder</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">attrDic</span><span class="p">,</span> <span class="n">attrNum</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attrDic</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">attrDic</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">attrNum</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">attrDic</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">attrNum</span><span class="p">]</span>
+
+<span class="n">attr_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_1&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_2&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1"># Послденим идет аттрибут позиции</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_2&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_3&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+            <span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_default&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_default&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;attr_A_col&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;key_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">attrFinder</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">,</span> <span class="mi">0</span><span class="p">,))</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;position_col&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;key_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">attrFinder</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">,</span> <span class="mi">3</span><span class="p">,))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;position_col&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Сортировка по аттрибуту позиции</span>
 </pre></div>
                 
                   

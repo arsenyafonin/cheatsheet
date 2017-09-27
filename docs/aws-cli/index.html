@@ -230,15 +230,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../cmd-bash/" title="Command Prompt | Bash" class="md-nav__link">
+      Command Prompt | Bash
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Система
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Система
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -270,13 +282,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Преднастройка
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Преднастройка
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -306,9 +318,41 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        AWS CLI
+      </label>
+    
     <a href="./" title="AWS CLI" class="md-nav__link md-nav__link--active">
       AWS CLI
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aws-command-line-interface-windows" title="Установка AWS Command Line Interface на Windows" class="md-nav__link">
+    Установка AWS Command Line Interface на Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-command-line-interface-mac-os" title="Установка AWS Command Line Interface на Mac OS" class="md-nav__link">
+    Установка AWS Command Line Interface на Mac OS
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -345,6 +389,27 @@
   
   
   
+    <label class="md-nav__title" for="toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aws-command-line-interface-windows" title="Установка AWS Command Line Interface на Windows" class="md-nav__link">
+    Установка AWS Command Line Interface на Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-command-line-interface-mac-os" title="Установка AWS Command Line Interface на Mac OS" class="md-nav__link">
+    Установка AWS Command Line Interface на Mac OS
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -358,7 +423,7 @@
                 
                   <h1>AWS CLI</h1>
                 
-                <p>Установка AWS Command Line Interface на Windows:</p>
+                <h4 id="aws-command-line-interface-windows">Установка AWS Command Line Interface на Windows<a class="headerlink" href="#aws-command-line-interface-windows" title="Permanent link">&para;</a></h4>
 <ol>
 <li>cmd.exe: <code>pip install awscli --upgrade --user</code></li>
 <li>run: <code>sysdm.cpl</code> &gt; Переменные среды... &gt; Системные переменные:<ol>
@@ -367,8 +432,26 @@
 </ol>
 </li>
 <li>cmd.exe: <code>aws configure</code><ol>
-<li>AWS Access Key ID: <code>aws_access_key_id</code> из <code>..\SC_Admin\_db\aws\credentials</code></li>
-<li>AWS Secret Access Key: <code>aws_secret_access_key</code> из&nbsp;<code>..\SC_Admin\_db\aws\credentials</code></li>
+<li>AWS Access Key ID: <code>AKIAJSGFIXAOPJTCVHAQ</code></li>
+<li>AWS Secret Access Key: <code>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</code></li>
+<li>Default region name: <code>eu-central-1</code></li>
+<li>Default output format &gt; Skip</li>
+</ol>
+</li>
+</ol>
+<h4 id="aws-command-line-interface-mac-os">Установка AWS Command Line Interface на Mac OS<a class="headerlink" href="#aws-command-line-interface-mac-os" title="Permanent link">&para;</a></h4>
+<p>Все команды из инструкции ниже необходимо запускать в Terminal.</p>
+<ol>
+<li>Установите AWS CLI с помощью pip: <code>pip3 install awscli --upgrade --user</code></li>
+<li>Используя команду <code>pip3 show awscli</code>, найдите параметр <code>Location</code>, который будет содержать путь к модулю, например: <code>./Library/Python/3.6/lib/python/site-packages</code></li>
+<li>Скопируйте путь к модулю, заменив <code>lib/...</code> на <code>bin</code>, а <code>./</code> на <code>$HOME</code>, чтобы получить путь вида: <code>$HOME/Library/Python/3.6/bin</code></li>
+<li>Добавьте путь к переменную среды PATH:<br />
+<code>export PATH=$HOME/Library/Python/3.6/bin:$PATH</code></li>
+<li>Обновите командную строку: <code>source ~/.bash_profile</code></li>
+<li>Проверьте правильность установки с помощью <code>aws --version</code></li>
+<li>Настройте AWS CLI с помощью <code>aws configure</code>:<ol>
+<li>AWS Access Key ID: <code>AKIAJSGFIXAOPJTCVHAQ</code></li>
+<li>AWS Secret Access Key: <code>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</code></li>
 <li>Default region name: <code>eu-central-1</code></li>
 <li>Default output format &gt; Skip</li>
 </ol>

@@ -8,7 +8,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://arsenyafonin.github.io/cheatsheet/instructions/">
+        <link rel="canonical" href="https://arsenyafonin.github.io/cheatsheet/cmd-bash/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Markdown - Arseny's Cheatsheet</title>
+        <title>Command Prompt | Bash - Arseny's Cheatsheet</title>
       
     
     
@@ -80,7 +80,7 @@
             
               
             
-            Markdown
+            Command Prompt | Bash
           
         </span>
       </div>
@@ -213,6 +213,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../instructions/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -223,22 +235,44 @@
       
     
     
-    <a href="./" title="Markdown" class="md-nav__link md-nav__link--active">
-      Markdown
-    </a>
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Command Prompt | Bash
+      </label>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../cmd-bash/" title="Command Prompt | Bash" class="md-nav__link">
+    <a href="./" title="Command Prompt | Bash" class="md-nav__link md-nav__link--active">
       Command Prompt | Bash
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-prompt" title="Command Prompt" class="md-nav__link">
+    Command Prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Любая оболочка" class="md-nav__link">
+    Любая оболочка
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -355,6 +389,27 @@
     
   
   
+    <label class="md-nav__title" for="toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-prompt" title="Command Prompt" class="md-nav__link">
+    Command Prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Любая оболочка" class="md-nav__link">
+    Любая оболочка
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -366,181 +421,22 @@
               
                 
                 
-                <p>Ниже представлена инструкция по использованию Markdown, а также нескольких внутренних правил адаптации синтаксиса Markdown под наши нужды.</p>
-<h2 id="_1">Заголовки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Заголовки статей создаются автоматически из их названия, поэтому первый уровень заголовков (#) мы не используем. Не забывайте отбивать решетки пробелами.</p>
-<div class="codehilite"><pre><span></span># Название статьи
-## Обычный заголовок
-### Подзаголовок или название раздела
-#### Дополнительный пункт навигации
-
-#Название статьи
-##Обычный заголовок
-###Подзаголовок или название раздела
-####Дополнительный пункт навигации
+                <h1 id="shell-">Shell-скрипты<a class="headerlink" href="#shell-" title="Permanent link">&para;</a></h1>
+<h3 id="command-prompt">Command Prompt<a class="headerlink" href="#command-prompt" title="Permanent link">&para;</a></h3>
+<p>Пауза в случае ошибки исполнения команды:</p>
+<div class="codehilite"><pre><span></span>@if NOT [&quot;%errorlevel%&quot;]==[&quot;0&quot;] pause
 </pre></div>
 
 
-<div class="admonition done">
-<h1 id="_2">Название статьи<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<h2 id="_3">Обычный заголовок<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">Подзаголовок или название раздела<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h4 id="_5">Дополнительный пункт навигации<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-</div>
-<div class="admonition fail">
-<p>#Название статьи<br />
-##Обычный заголовок<br />
-###Подзаголовок или название раздела<br />
-####Дополнительный пункт навигации</p>
-</div>
-<hr />
-<h2 id="_6">Выделения<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>Жирное **выделение**  
-Курсивное *выделение*
+<p>Изменение текущей директории на директорию скрипта:</p>
+<div class="codehilite"><pre><span></span>@cd %~dp0
 </pre></div>
 
 
-<div class="admonition done">
-<p>Жирное <strong>выделение</strong><br />
-Курсивное <em>выделение</em></p>
-</div>
-<hr />
-<p>Специальные выделения используются для обозначения: ролей, ярлыков, путей файлов</p>
-<div class="codehilite"><pre><span></span>`Менеджер курсов`
-
-Видеоролик `video`
-
-`SC_work\[Имя куратора]\[Шифр программы]\[Полный шифр]_promo`
+<h3 id="_1">Любая оболочка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Конвертация .ipynb в .py-скрипт:</p>
+<div class="codehilite"><pre><span></span>jupyter nbconvert --to script notebook_title.ipynb
 </pre></div>
-
-
-<div class="admonition done">
-<p><code>Менеджер курсов</code>  </p>
-<p>Видеоролик <code>video</code>  </p>
-<p><code>SC_work\[Имя куратора]\[Шифр программы]\[Полный шифр]_promo</code></p>
-</div>
-<hr />
-<h2 id="_7">Ссылки<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>В тексте есть [ссылка](http://www.softculture.cc) на внешний документ
-В тексте есть [ссылка](instructions/) на внутренний документ
-</pre></div>
-
-
-<div class="admonition done">
-<p>В тексте есть <a href="http://www.softculture.cc">ссылка</a> на внешний документ<br />
-В тексте есть <a href="../instructions/">ссылка</a> на внутренний документ</p>
-</div>
-<hr />
-<h2 id="_8">Списки<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>Элементы подсписка отбиваются 4-мя пробелами.</p>
-<div class="codehilite"><pre><span></span>* Элемент А
-* Элемент B
-* Элемент С
-••••* Элемент С.1
-••••* Элемент C.2
-</pre></div>
-
-
-<div class="admonition done">
-<ul>
-<li>Элемент А</li>
-<li>Элемент B</li>
-<li>Элемент С<ul>
-<li>Элемент С.1</li>
-<li>Элемент C.2</li>
-</ul>
-</li>
-</ul>
-</div>
-<hr />
-<h2 id="_9">Отбивка<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>***
-</pre></div>
-
-
-<div class="admonition done">
-<p>&nbsp;</p>
-<hr />
-<p>&nbsp;</p>
-</div>
-<hr />
-<h2 id="_10">Микротипографика<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<p>Перенос строки без абзацного отступа создается 2-мя пробелами в конце строки. В&nbsp;противном случае следующая строка просто приклеется к предыдущей.</p>
-<div class="codehilite"><pre><span></span>Перенос на следующию строку••
-Без абзацного отступа
-
-Перенос на следующию строку
-Без абзацного отступа
-</pre></div>
-
-
-<div class="admonition done">
-<p>Перенос на следующию строку<br />
-Без абзацного отступа</p>
-</div>
-<div class="admonition fail">
-<p>Перенос на следующию строку
-Без абзацного отступа</p>
-</div>
-<hr />
-<p>Неразрывной пробел ставится с помощью символа <code>&amp;nbsp;</code> (non-breaking space)</p>
-<div class="codehilite"><pre><span></span>...между словами. С его помощью можно избежать разрыва группы слов.
-
-...между словами. С&amp;nbsp;его&amp;nbsp;помощью можно избежать разрыва группы слов.
-</pre></div>
-
-
-<div class="admonition done">
-<p>Бывают случаи, когда нам необходимо поставить неразрывный пробел между словами. С&nbsp;его&nbsp;помощью можно избежать разрыва группы слов.</p>
-</div>
-<div class="admonition fail">
-<p>Бывают случаи, когда нам необходимо поставить неразрывный пробел между словами. С его помощью можно избежать разрыва группы слов.</p>
-</div>
-<hr />
-<h2 id="_11">Комментарии<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<p>Изначально синтаксис Markdown не предполагает комментариев или сообщений. Их создание возможно с помощью модуля Admonition. Полный перечень возможностей Admonition можно посмотреть <a href="http://squidfunk.github.io/mkdocs-material/extensions/admonition/">здесь</a>.</p>
-<p>Мы договорились об использовании в Wiki только следующих типов сообщений:</p>
-<div class="codehilite"><pre><span></span>!!! done &quot;Правильно&quot;
-    Комментарий с заголовком
-
-!!! done &quot;&quot;
-    Комментарий без заголовка
-
-!!! fail &quot;&quot;
-    Комментарий об ошибке
-
-!!! summary &quot;&quot;
-    Резюмирующий комментарий
-
-!!! note &quot;&quot;
-    #### Задача из Wrike с отображением в навигации
-    `Исполнитель`
-
-!!! attention &quot;&quot;
-    Предупрежающий комментарий
-</pre></div>
-
-
-<div class="admonition done">
-<p class="admonition-title">Правильно</p>
-<p>Комментарий с заголовком</p>
-</div>
-<div class="admonition done">
-<p>Комментарий без заголовка</p>
-</div>
-<div class="admonition fail">
-<p>Сообщение об ошибке</p>
-</div>
-<div class="admonition note">
-<h4 id="wrike">Задача из Wrike с отображением в навигации<a class="headerlink" href="#wrike" title="Permanent link">&para;</a></h4>
-<p><code>Исполнитель</code></p>
-</div>
-<div class="admonition summary">
-<p>Резюмирующий комментарий</p>
-</div>
-<div class="admonition attention">
-<p>Предупрежающий комментарий</p>
-</div>
                 
                   
                 
@@ -559,7 +455,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../python-pandas/" title="Анализ данных" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../instructions/" title="Markdown" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -568,19 +464,19 @@
                 <span class="md-footer-nav__direction">
                   Назад
                 </span>
-                Анализ данных
+                Markdown
               </span>
             </div>
           </a>
         
         
-          <a href="../cmd-bash/" title="Command Prompt | Bash" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../shortcuts/" title="Горячие клавиши" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Вперед
                 </span>
-                Command Prompt | Bash
+                Горячие клавиши
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

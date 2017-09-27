@@ -34,3 +34,7 @@
   "alt-d": "pane:show-previous-item",
   "alt-f": "pane:show-next-item"}
 ```
+
+Добавление [поддержки синтаксиса AutoHotkey](https://github.com/cescue/language-autohotkey):
+
+* `cmd.exe`: `apm install language-autohotkey2`

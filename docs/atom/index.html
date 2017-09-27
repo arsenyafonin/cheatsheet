@@ -230,15 +230,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../cmd-bash/" title="Command Prompt | Bash" class="md-nav__link">
+      Command Prompt | Bash
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Система
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Система
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -270,13 +282,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Преднастройка
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Преднастройка
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -383,6 +395,22 @@
   <span class="nt">&quot;ctrl-alt-,&quot;</span><span class="p">:</span> <span class="s2">&quot;unset!&quot;</span><span class="p">,</span>
   <span class="nt">&quot;ctrl-alt-.&quot;</span><span class="p">:</span> <span class="s2">&quot;unset!&quot;</span><span class="p">}</span>
 </pre></div>
+
+
+<p>Добавление горячих клавиш для навигации между вкладками:</p>
+<ul>
+<li>File/Keymap... &gt; Добавить в конец файла <code>keymap.cson</code>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;body&quot;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&quot;alt-d&quot;</span><span class="p">:</span> <span class="s2">&quot;pane:show-previous-item&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;alt-f&quot;</span><span class="p">:</span> <span class="s2">&quot;pane:show-next-item&quot;</span><span class="p">}</span>
+</pre></div>
+
+
+<p>Добавление <a href="https://github.com/cescue/language-autohotkey">поддержки синтаксиса AutoHotkey</a>:</p>
+<ul>
+<li><code>cmd.exe</code>: <code>apm install language-autohotkey2</code></li>
+</ul>
                 
                   
                 
