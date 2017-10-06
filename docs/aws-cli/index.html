@@ -425,15 +425,20 @@
                 
                 <h4 id="aws-command-line-interface-windows">Установка AWS Command Line Interface на Windows<a class="headerlink" href="#aws-command-line-interface-windows" title="Permanent link">&para;</a></h4>
 <ol>
-<li>cmd.exe: <code>pip install awscli --upgrade --user</code></li>
-<li>run: <code>sysdm.cpl</code> &gt; Переменные среды... &gt; Системные переменные:<ol>
-<li><code>Path</code>: Изменить...</li>
-<li>Создать: <code>C:\Users\%USERNAME%\AppData\Roaming\Python\Python36\Scripts</code> (<code>%USERNAME%</code> заменить)</li>
+<li>Установить AWS CLI с помощью командной строки:<br />
+<code>Win + R</code>: <code>cmd</code> → cmd.exe: <code>pip install awscli --upgrade --user</code></li>
+<li>Добавить путь к AWS CLI в переменную среды PATH:<br />
+<code>Win + R</code>: <code>sysdm.cpl</code> → Дополнительно → Переменные&nbsp;среды...:&nbsp;Системные&nbsp;переменные: <code>Path</code> → Изменить...:<ol>
+<li>Создать: <code>C:\Users\________\AppData\Roaming\Python\Python36\Scripts</code></li>
+<li>Заменить <code>________</code> вашим именем пользователя, оно идет после <code>C:\Users\</code>, если открыть новую командную строку (<code>Win + R</code>: <code>cmd</code>)</li>
 </ol>
 </li>
-<li>cmd.exe: <code>aws configure</code><ol>
-<li>AWS Access Key ID: <code>AKIAJSGFIXAOPJTCVHAQ</code></li>
-<li>AWS Secret Access Key: <code>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</code></li>
+<li>Перезапустить командную строку:<br />
+<code>Win + R</code>: <code>cmd</code></li>
+<li>Настроить AWS CLI:<br />
+cmd.exe: <code>aws configure</code><ol>
+<li>AWS Access Key ID: <code>login</code> сервиса <em>Amazon AWS CLI</em> в <a href="https://airtable.com/tblKcJTlBYbotdmxp/viwAvlWxjNVh18QNE"><em>SC_ Links</em></a></li>
+<li>AWS Secret Access Key: <code>password</code> сервиса <em>Amazon AWS CLI</em> в <a href="https://airtable.com/tblKcJTlBYbotdmxp/viwAvlWxjNVh18QNE"><em>SC_ Links</em></a></li>
 <li>Default region name: <code>eu-central-1</code></li>
 <li>Default output format &gt; Skip</li>
 </ol>
@@ -442,16 +447,16 @@
 <h4 id="aws-command-line-interface-mac-os">Установка AWS Command Line Interface на Mac OS<a class="headerlink" href="#aws-command-line-interface-mac-os" title="Permanent link">&para;</a></h4>
 <p>Все команды из инструкции ниже необходимо запускать в Terminal.</p>
 <ol>
-<li>Установите AWS CLI с помощью pip: <code>pip3 install awscli --upgrade --user</code></li>
-<li>Используя команду <code>pip3 show awscli</code>, найдите параметр <code>Location</code>, который будет содержать путь к модулю, например: <code>./Library/Python/3.6/lib/python/site-packages</code></li>
-<li>Скопируйте путь к модулю, заменив <code>lib/...</code> на <code>bin</code>, а <code>./</code> на <code>$HOME</code>, чтобы получить путь вида: <code>$HOME/Library/Python/3.6/bin</code></li>
-<li>Добавьте путь к переменную среды PATH:<br />
+<li>Установить AWS CLI с помощью pip: <code>pip3 install awscli --upgrade --user</code></li>
+<li>Используя команду <code>pip3 show awscli</code>, найти параметр <code>Location</code>, который будет содержать путь к модулю, например: <code>./Library/Python/3.6/lib/python/site-packages</code></li>
+<li>Скопировать путь к модулю, заменив <code>lib/...</code> на <code>bin</code>, а <code>./</code> на <code>$HOME</code>, чтобы получить путь вида: <code>$HOME/Library/Python/3.6/bin</code></li>
+<li>Добавить путь к AWS CLI в переменную среды PATH:<br />
 <code>export PATH=$HOME/Library/Python/3.6/bin:$PATH</code></li>
-<li>Обновите командную строку: <code>source ~/.bash_profile</code></li>
-<li>Проверьте правильность установки с помощью <code>aws --version</code></li>
-<li>Настройте AWS CLI с помощью <code>aws configure</code>:<ol>
-<li>AWS Access Key ID: <code>AKIAJSGFIXAOPJTCVHAQ</code></li>
-<li>AWS Secret Access Key: <code>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</code></li>
+<li>Обновить командную строку: <code>source ~/.bash_profile</code></li>
+<li>Проверить правильность установки с помощью <code>aws --version</code></li>
+<li>Настроить AWS CLI с помощью <code>aws configure</code>:<ol>
+<li>AWS Access Key ID: <code>login</code> сервиса <em>Amazon AWS CLI</em> в <a href="https://airtable.com/tblKcJTlBYbotdmxp/viwAvlWxjNVh18QNE"><em>SC_ Links</em></a></li>
+<li>AWS Secret Access Key: <code>password</code> сервиса <em>Amazon AWS CLI</em> в <a href="https://airtable.com/tblKcJTlBYbotdmxp/viwAvlWxjNVh18QNE"><em>SC_ Links</em></a></li>
 <li>Default region name: <code>eu-central-1</code></li>
 <li>Default output format &gt; Skip</li>
 </ol>

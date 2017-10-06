@@ -19,3 +19,10 @@
 ``` bash
 jupyter nbconvert --to script notebook_title.ipynb
 ```
+
+Работа с git:
+
+``` bash
+git ls-tree -r master --name-only # Show all tracked files
+git check-ignore * # Show ignored files
+```
