@@ -1,6 +1,8 @@
-# Работа с файлами с os и sys
+# Работа с файлами
 
-Для большинства команд необходима загрузка модуля `os`:
+## os и glob
+
+Базовый функционал:
 ``` python
 import os
 
@@ -14,6 +16,9 @@ filepath = os.path.join(folder, filename)
 Изменение текущей директории на директорию скрипта:
 ``` python
 folder = os.path.dirname(os.path.realpath(__file__))
+os.chdir(folder)
+
+print(os.getcwd())
 ```
 
 Проверка наличия файла в системе:
@@ -26,16 +31,35 @@ if os.path.isfile(filepath):
 ``` python
 import glob
 for filename in glob.glob("*.zip"):
-      print(filename)
+  print(filename)
 ```
 
 Удаление файла:
 ``` python
 os.unlink(filepath)
 ```
+
+Удаление директории:
+``` python
+# Вариант 1: уверенный
+from subprocess import call
+
+if os.path.isdir(path):
+  call(("rmdir /S /Q \"" + path + "\""), shell=True)
+
+# Вариант 2: не работает с read-only файлами и папками
+import shutil
+
+if os.path.isdir(path):
+  shutil.rmtree(path)
+```
+
 ***
 
-Работа с модулем io:
+## io
+
+Базовый функционал:
+
 ``` python
 import io
 

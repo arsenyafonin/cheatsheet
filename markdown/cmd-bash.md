@@ -12,6 +12,15 @@
 @cd %~dp0
 ```
 
+### Bash
+
+Изменение текущей директории на директорию скрипта:
+``` bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=$(printf %q "$DIR")
+eval cd $DIR
+```
+
 ### Любая оболочка
 
 Конвертация .ipynb в .py-скрипт:
@@ -25,4 +34,24 @@ jupyter nbconvert --to script notebook_title.ipynb
 ``` bash
 git ls-tree -r master --name-only # Show all tracked files
 git check-ignore * # Show ignored files
+```
+
+### Работа с ffmpeg
+
+Обрезка видеозаписей без конвертации с помощью ffmpeg возможна, однако не всегда работает корректно. Первый вариант обрезает видео по keyframe, а аудио по заданным параметрам, таким образом если keyframe не попадает на начало обрезанного отрезка, фрагмент до keyframe заполняется пустотой. Возможный вариант ухода от проблемы — поиск оптимального с точки зрения keyframe начала обрезки:
+
+``` bash
+ffmpeg -i input.mp4 -ss hh:mm:ss -c copy -to hh:mm:ss output.mp4
+```
+
+Второй вариант обрезает видео более аккуратно, однако на видео возможно появление артефактов и искажений:
+
+``` bash
+ffmpeg -ss hh:mm:ss -i input.mp4 -to hh:mm:ss -c copy output.mp4
+```
+
+Третий вариант предполагает обрезку видео с конвертацией с теми же настройками, в этом случае существенной экономии времени не будет:
+
+``` bash
+ffmpeg -i input.mp4 -ss 00:mm:ss -to hh:mm:ss output.mp4
 ```

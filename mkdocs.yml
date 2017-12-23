@@ -10,6 +10,8 @@ pages:
   - Импорт модулей: 'python-import.md'
   - Работа с файлами: 'python-os.md'
   - Анализ данных: 'python-pandas.md'
+  - Регулярные выражения: 'python-regex.md'
+  - Базовые библиотеки: 'python-utilities.md'
 - Markdown: 'instructions.md'
 - Command Prompt | Bash: 'cmd-bash.md'
 - Система:

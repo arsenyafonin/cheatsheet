@@ -38,3 +38,8 @@
 Добавление [поддержки синтаксиса AutoHotkey](https://github.com/cescue/language-autohotkey):
 
 * `cmd.exe`: `apm install language-autohotkey2`
+
+Изменение базовых настроек:
+
+* File/Settings/System > Show in file context menus > Enable
+* File/Settings/System > Show in folder context menus > Enable
