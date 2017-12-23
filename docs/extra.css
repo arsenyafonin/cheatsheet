@@ -45,6 +45,11 @@ hr {
   margin: 0 .4em;
 }
 
+.md-typeset h1, .md-typeset h2 {
+  font-weight: 400;
+  color: black;
+}
+
 .md-typeset h4 {
   margin-bottom: 0;
 }

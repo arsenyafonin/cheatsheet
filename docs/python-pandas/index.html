@@ -245,8 +245,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="Преобразование данных" class="md-nav__link">
-    Преобразование данных
+  <a href="#_3" title="Базовые преобразования" class="md-nav__link">
+    Базовые преобразования
   </a>
   
 </li>
@@ -259,8 +259,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="Дополнение внешними аттрибутами" class="md-nav__link">
-    Дополнение внешними аттрибутами
+  <a href="#_5" title="Агрегирование данных" class="md-nav__link">
+    Агрегирование данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="Дополнение внешними атрибутами" class="md-nav__link">
+    Дополнение внешними атрибутами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="Сложные операции с индексами" class="md-nav__link">
+    Сложные операции с индексами
   </a>
   
 </li>
@@ -271,6 +285,30 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-regex/" title="Регулярные выражения" class="md-nav__link">
+      Регулярные выражения
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-utilities/" title="Базовые библиотеки" class="md-nav__link">
+      Базовые библиотеки
+    </a>
   </li>
 
         
@@ -434,8 +472,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="Преобразование данных" class="md-nav__link">
-    Преобразование данных
+  <a href="#_3" title="Базовые преобразования" class="md-nav__link">
+    Базовые преобразования
   </a>
   
 </li>
@@ -448,8 +486,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="Дополнение внешними аттрибутами" class="md-nav__link">
-    Дополнение внешними аттрибутами
+  <a href="#_5" title="Агрегирование данных" class="md-nav__link">
+    Агрегирование данных
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="Дополнение внешними атрибутами" class="md-nav__link">
+    Дополнение внешними атрибутами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="Сложные операции с индексами" class="md-nav__link">
+    Сложные операции с индексами
   </a>
   
 </li>
@@ -470,7 +522,7 @@
                 
                 
                 <h1 id="pandas">Анализ данных с модулем pandas<a class="headerlink" href="#pandas" title="Permanent link">&para;</a></h1>
-<h3 id="_1">Загрузка данных<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="_1">Загрузка данных<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Импорт данных из pickle файлов:</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
@@ -490,17 +542,50 @@
 </pre></div>
 
 
-<h3 id="_2">Описание данных<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Импорт из .xlsx:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">useful_functions</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="n">xls_path</span> <span class="o">=</span> <span class="n">path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\user\Google Диск\test.xlsx&#39;</span><span class="p">)</span>
+<span class="n">colnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">xls_path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="n">colnames</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Экспорт в .xlsx:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">useful_functions</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">exportxlsx</span>
+
+<span class="n">folder_path</span> <span class="o">=</span> <span class="n">path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\user\Google Диск&#39;</span><span class="p">)</span>
+<span class="c1"># Путь вида &#39;C:/Users/user/Google Диск&#39;</span>
+<span class="n">exportxlsx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">folder_path</span><span class="p">,</span> <span class="s1">&#39;filename.xls&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="_2">Описание данных<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Вернет первые 5 рядов</span>
 <span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span> <span class="c1"># Вернет описание типов данных по колонкам</span>
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="c1"># Вернет список всех колонок фрейма</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="c1"># Вернет индексы фрейма</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="c1"># Кол-во рядов</span>
 </pre></div>
 
 
-<h3 id="_3">Преобразование данных<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">Базовые преобразования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Работа с индексами:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verify_integrity</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># Создание индекса и удаление колонки</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1"># Удаление названия колонки индекса</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Сортировка по индексу</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># Параметр drop=False превратит индекс в колонку</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index_list</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Удаление рядов с определенным индексом</span>
+</pre></div>
+
+
 <p>Преобразование колонок:</p>
 <div class="codehilite"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">])</span>
 
@@ -515,33 +600,77 @@
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reindex_axis</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Сортировка колонок</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;С&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Удаление колонки &#39;С&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;С&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Удаление колонки &#39;С&#39;</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">column_series</span><span class="p">)</span> <span class="c1"># Добавление колонки в определенное место</span>
 </pre></div>
 
 
-<p>Обработка данных:</p>
-<div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Замена пропусков &#39;А&#39; данным из &#39;B&#39;</span>
+<p>Преобразование рядов:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indexes</span><span class="p">]</span> <span class="c1"># Выделение рядов по индексу/индексам</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># Выделение по порядковому номеру</span>
 </pre></div>
 
 
-<h3 id="_4">Фильтрация данных<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Обработка NA:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Замена пропусков значением &#39;0&#39;</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Замена пропусков &#39;А&#39; данным из &#39;B&#39;</span>
+</pre></div>
+
+
+<p>Работа с данными:</p>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">where</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">series_A</span><span class="p">,</span> <span class="n">series_B</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">around</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">around</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">],</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Округление до 100</span>
+</pre></div>
+
+
+<p>Цикл по рядам:</p>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+</pre></div>
+
+
+<h2 id="_4">Фильтрация данных<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>Использование масок:</p>
 <div class="codehilite"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="c1"># Выбор по без маски</span>
 
 <span class="n">mask_1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col_1&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;value_1&#39;</span>
 <span class="n">mask_2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;col_2&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;value_2&#39;</span>
 <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask_1</span> <span class="o">&amp;</span> <span class="n">mask_2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Выбор с масками</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">mask_1</span> <span class="o">|</span> <span class="n">mask_2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Выбор с масками</span>
+
+<span class="n">mask_null</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
+<span class="n">not_null</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">mask_null</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mask_dup</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">mask_dup</span><span class="p">]</span>
 </pre></div>
 
 
 <p>Работа с временными данными:</p>
-<div class="codehilite"><pre><span></span><span class="n">mask_date</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2016-02-01&#39;</span> <span class="c1"># Выбор по дате</span>
+<div class="codehilite"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;string&#39;</span><span class="p">],</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;%m/</span><span class="si">%d</span><span class="s1">/%Y %H:%M:%S&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;string&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%b %Y&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">today</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+
+<span class="n">mask_date</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2016-02-01&#39;</span> <span class="c1"># Выбор по дате</span>
 
 <span class="n">month</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">mask_date</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="n">month</span>
+<span class="n">mask_date</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="n">month</span>
 <span class="c1"># Выбор по месяцу (%m), году (%Y) и пр.</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;01&#39;</span><span class="p">,</span>\
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;01&#39;</span><span class="p">,</span>\
                              <span class="n">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="c1"># Вычленение месяца из даты</span>
 </pre></div>
@@ -553,14 +682,59 @@
 </pre></div>
 
 
-<h3 id="_5">Дополнение внешними аттрибутами<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_5">Агрегирование данных<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Одной строкой:</p>
+<div class="codehilite"><pre><span></span><span class="n">df_stats</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">})</span>
+<span class="n">df_stats</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1"># Удаление названия колонки индекса</span>
+</pre></div>
+
+
+<p>Несколькими строками:</p>
+<div class="codehilite"><pre><span></span><span class="n">df_stats</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">,</span><span class="s1">&#39;sum&#39;</span><span class="p">],</span>
+                                        <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">]</span>
+                                      <span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Объединение данных:</p>
+<div class="codehilite"><pre><span></span><span class="n">df_full</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_1</span><span class="p">,</span> <span class="n">df_2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">join_axes</span><span class="o">=</span><span class="p">[</span><span class="n">df_1</span><span class="o">.</span><span class="n">index</span><span class="p">])</span>
+<span class="c1"># Дополнение данных из первой таблицы данными второй по индексу</span>
+</pre></div>
+
+
+<h2 id="_6">Дополнение внешними атрибутами<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Применение функции поэлементно:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">string</span> <span class="o">!=</span> <span class="n">string</span><span class="p">:</span> <span class="c1"># Проверка на NaN</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">string</span> <span class="o">+</span> <span class="s1">&#39;2&#39;</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;old&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">function</span><span class="p">)</span> <span class="c1"># Применение обычной функции поэлементно</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;is_url&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">))</span>
+<span class="c1"># Применение lambda-функции</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span> <span class="c1"># Проверить!</span>
+</pre></div>
+
+
+<p>Применение функции к рядам:</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Дополнение атрибутами:</p>
 <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">attrFinder</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">attrDic</span><span class="p">,</span> <span class="n">attrNum</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attrDic</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">attrDic</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">attrNum</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">attrDic</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">attrNum</span><span class="p">]</span>
 
-<span class="n">attr_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_1&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_2&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1"># Послденим идет аттрибут позиции</span>
+<span class="n">attr_dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_1&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_2&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1"># Последним идет атрибут позиции</span>
             <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_2&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
             <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_3&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
             <span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;attr_A_default&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_B_default&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}</span>
@@ -568,7 +742,30 @@
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;attr_A_col&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;key_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">attrFinder</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">,</span> <span class="mi">0</span><span class="p">,))</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;position_col&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;key_col&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">attrFinder</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">,</span> <span class="mi">3</span><span class="p">,))</span>
-<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;position_col&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Сортировка по аттрибуту позиции</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;position_col&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># Сортировка по атрибуту позиции</span>
+</pre></div>
+
+
+<h2 id="_7">Сложные операции с индексами<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Сравнение таблиц по индексу</p>
+<div class="codehilite"><pre><span></span><span class="n">intersect</span> <span class="o">=</span> <span class="n">df_1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">df_2</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="c1"># Вычленение общих для двух таблиц индексов</span>
+<span class="n">second_only</span> <span class="o">=</span> <span class="n">df_2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">df_1</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="c1"># Индексы, присутствующие только во второй таблице</span>
+<span class="n">df_2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">second_only</span><span class="p">]</span>
+<span class="c1"># Ряды, присутствующие только во второй таблице (slice)</span>
+
+<span class="n">new_1</span> <span class="o">=</span> <span class="n">df_1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">intersect</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># Выделение рядов по индексам и создание копии</span>
+<span class="n">new_2</span> <span class="o">=</span> <span class="n">df_2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">intersect</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">mask_changed</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_1</span> <span class="o">!=</span> <span class="n">new_2</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Маска по рядам на различия хотя бы в одной колонке</span>
+<span class="c1"># Обе таблицы должны быть одного размера, иметь одинаковые индексы</span>
+<span class="c1"># и быть отсортированы по ним</span>
+
+<span class="n">new_2</span><span class="p">[</span><span class="n">mask_changed</span><span class="p">]</span>
+<span class="c1"># Измененные по сравнению с первой таблицей ряды</span>
 </pre></div>
                 
                   
@@ -603,13 +800,13 @@
           </a>
         
         
-          <a href="../instructions/" title="Markdown" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../python-regex/" title="Регулярные выражения" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Вперед
                 </span>
-                Markdown
+                Регулярные выражения
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
