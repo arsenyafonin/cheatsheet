@@ -485,6 +485,11 @@
 </pre></div>
 
 
+<p>Проверка путей для поиска модулей Python:</p>
+<div class="codehilite"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import sys; print(&#39;</span><span class="se">\n</span><span class="s2">&#39;.join(sys.path))&quot;</span>
+</pre></div>
+
+
 <h3 id="bash">Bash<a class="headerlink" href="#bash" title="Permanent link">&para;</a></h3>
 <p>Изменение текущей директории на директорию скрипта:</p>
 <div class="codehilite"><pre><span></span><span class="nv">DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span> <span class="nb">cd</span> <span class="s2">&quot;</span><span class="k">$(</span> dirname <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> <span class="k">)</span><span class="s2">&quot;</span>
@@ -518,6 +523,16 @@ git check-ignore * <span class="c1"># Show ignored files</span>
 
 <p>Третий вариант предполагает обрезку видео с конвертацией с теми же настройками, в этом случае существенной экономии времени не будет:</p>
 <div class="codehilite"><pre><span></span>ffmpeg -i input.mp4 -ss <span class="m">00</span>:mm:ss -to hh:mm:ss output.mp4
+</pre></div>
+
+
+<p>Выделение аудиодорожки:</p>
+<div class="codehilite"><pre><span></span>ffmpeg -i input.mp4 -vn -acodec copy audio.aac
+</pre></div>
+
+
+<p>Добавление аудиодорожки:</p>
+<div class="codehilite"><pre><span></span>ffmpeg -i input.mp4 -i audio.m4a -map <span class="m">0</span>:0 -map <span class="m">1</span>:0 output.mp4
 </pre></div>
                 
                   
