@@ -73,6 +73,8 @@ from pytz import timezone
 tz = timezone('Europe/Moscow')
 now = dt.datetime.now(tz)
 now = now.replace(tzinfo=None)
+
+now_moscow = now_utc.astimezone(tz) # Конвертация timezone
 ```
 
 ## subprocess

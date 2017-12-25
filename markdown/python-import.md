@@ -1,13 +1,32 @@
 # Импорт модулей
 
-Импорт библиотеки с модулями
+Импорт пользовательских модулей:
 ``` python
-import sys
-modules = 'C:/Users/user/Google Диск/_codes/modules/'
-sys.path.append(modules)
+import airtable_parser
+import xml_parser
+import courses_functions
+import s3_functions
+import sugar
+import grid
+
+help(sugar)
 ```
 
-Загрузка отдельных классов
+Проверка путей к модулям:
+``` python
+import sys
+print('\n'.join(sys.path))
+```
+
+Импорт библиотеки с модулями (неактуально при наличие пути к модулям в PYTHONPATH):
+``` python
+import sys
+sys.path.append('C:/Users/user/Google Диск/_codes/modules/')
+```
+
+Загрузка отдельных классов:
 ``` python
 from xml_parser import xmltodataframe
+from sugar import path
+from courses_functions import *
 ```
