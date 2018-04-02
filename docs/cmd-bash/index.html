@@ -305,6 +305,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mediainfo" title="Работа с mediainfo" class="md-nav__link">
+    Работа с mediainfo
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -458,6 +465,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mediainfo" title="Работа с mediainfo" class="md-nav__link">
+    Работа с mediainfo
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -533,6 +547,29 @@ git check-ignore * <span class="c1"># Show ignored files</span>
 
 <p>Добавление аудиодорожки:</p>
 <div class="codehilite"><pre><span></span>ffmpeg -i input.mp4 -i audio.m4a -map <span class="m">0</span>:0 -map <span class="m">1</span>:0 output.mp4
+</pre></div>
+
+
+<h3 id="mediainfo">Работа с mediainfo<a class="headerlink" href="#mediainfo" title="Permanent link">&para;</a></h3>
+<p>Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре <code>--Inform=</code>.</p>
+<div class="codehilite"><pre><span></span>@cd %~dp0
+@mediainfo --Inform<span class="o">=</span>file://mediainfo-paramerts.txt <span class="s2">&quot;video file.mov&quot;</span>
+@PAUSE
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>mediainfo --Inform<span class="o">=</span><span class="s2">&quot;General;Filename: %CompleteName%&quot;</span> <span class="s2">&quot;video file.mov&quot;</span>
+</pre></div>
+
+
+<p>Содержание txt-файла должно содержать параметры и начинаться с категории (<code>General;</code> или <code>Video;</code>). Сами параметры обрамляются знаками <code>%</code>. Вот примерное содержание файла:</p>
+<div class="codehilite"><pre><span></span>General;Filename: %CompleteName%\nFormat: %Format%\n
+Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%&quot;
+</pre></div>
+
+
+<p>Полный перечень параметров можно получить командой:</p>
+<div class="codehilite"><pre><span></span>mediainfo --info-parameters
 </pre></div>
                 
                   

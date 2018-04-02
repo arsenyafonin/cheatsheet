@@ -572,6 +572,25 @@
 </pre></div>
 
 
+<p>Базовые концепции</p>
+<div class="codehilite"><pre><span></span><span class="o">+------------+---------+--------+</span>
+<span class="o">|</span>            <span class="o">|</span>  <span class="n">A</span>      <span class="o">|</span>  <span class="n">B</span>     <span class="o">|</span>
+<span class="o">+------------+---------+---------</span>
+<span class="o">|</span>      <span class="mi">0</span>     <span class="o">|</span> <span class="mf">0.626386</span><span class="o">|</span> <span class="mf">1.52325</span><span class="o">|----</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="o">----</span><span class="err">→</span>
+<span class="o">+------------+---------+--------+</span>
+                <span class="o">|</span>         <span class="o">|</span>
+                <span class="o">|</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>  <span class="o">|</span>
+                <span class="err">↓</span>         <span class="err">↓</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="mi">0</span>    <span class="mf">1.074821</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">A</span>    <span class="mf">0.626386</span>
+<span class="o">&gt;</span> <span class="n">B</span>    <span class="mf">1.523255</span>
+</pre></div>
+
+
 <h2 id="_3">Базовые преобразования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>Работа с индексами:</p>
 <div class="codehilite"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verify_integrity</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>

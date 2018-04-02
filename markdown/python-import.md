@@ -18,7 +18,8 @@ import sys
 print('\n'.join(sys.path))
 ```
 
-Импорт библиотеки с модулями (неактуально при наличие пути к модулям в PYTHONPATH):
+Импорт библиотеки с модулями  
+(неактуально при наличие пути к модулям в PYTHONPATH):
 ``` python
 import sys
 sys.path.append('C:/Users/user/Google Диск/_codes/modules/')

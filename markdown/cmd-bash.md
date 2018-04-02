@@ -67,3 +67,27 @@ ffmpeg -i input.mp4 -vn -acodec copy audio.aac
 ``` bash
 ffmpeg -i input.mp4 -i audio.m4a -map 0:0 -map 1:0 output.mp4
 ```
+
+### Работа с mediainfo
+
+Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре `--Inform=`.
+``` bash
+@cd %~dp0
+@mediainfo --Inform=file://mediainfo-paramerts.txt "video file.mov"
+@PAUSE
+```
+
+``` bash
+mediainfo --Inform="General;Filename: %CompleteName%" "video file.mov"
+```
+
+Содержание txt-файла должно содержать параметры и начинаться с категории (`General;` или `Video;`). Сами параметры обрамляются знаками `%`. Вот примерное содержание файла:
+``` txt
+General;Filename: %CompleteName%\nFormat: %Format%\n
+Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%"
+```
+
+Полный перечень параметров можно получить командой:
+``` bash
+mediainfo --info-parameters
+```
