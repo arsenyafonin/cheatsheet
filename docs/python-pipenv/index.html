@@ -8,7 +8,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://arsenyafonin.github.io/cheatsheet/python-os/">
+        <link rel="canonical" href="https://arsenyafonin.github.io/cheatsheet/python-pipenv/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Работа с файлами - Arseny's Cheatsheet</title>
+        <title>Среда - Arseny's Cheatsheet</title>
       
     
     
@@ -84,7 +84,7 @@
                 </span>
               
             
-            Работа с файлами
+            Среда
           
         </span>
       </div>
@@ -190,54 +190,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Работа с файлами
-      </label>
-    
-    <a href="./" title="Работа с файлами" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../python-os/" title="Работа с файлами" class="md-nav__link">
       Работа с файлами
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Навигация</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#os-glob" title="os и glob" class="md-nav__link">
-    os и glob
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#io" title="io" class="md-nav__link">
-    io
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -281,11 +238,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../python-pipenv/" title="Среда" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Среда" class="md-nav__link md-nav__link--active">
       Среда
     </a>
+    
   </li>
 
         
@@ -431,27 +397,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Навигация</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#os-glob" title="os и glob" class="md-nav__link">
-    os и glob
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#io" title="io" class="md-nav__link">
-    io
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -463,76 +408,22 @@
               
                 
                 
-                <h1 id="_1">Работа с файлами<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="os-glob">os и glob<a class="headerlink" href="#os-glob" title="Permanent link">&para;</a></h2>
-<p>Базовый функционал:</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/user/Google Диск/SC_Admin/&#39;</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;README.md&#39;</span>
-<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;C:/Users/user/Google Диск/SC_Admin/README.md&#39;</span>
-
-<span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+                <h1 id="pipenv">Работа с Pipenv<a class="headerlink" href="#pipenv" title="Permanent link">&para;</a></h1>
+<p>Создание нового проекта:</p>
+<div class="codehilite"><pre><span></span>cd my-project
+pipenv install
 </pre></div>
 
 
-<p>Изменение текущей директории на директорию скрипта:</p>
-<div class="codehilite"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<p>Установка необходимых модулей:</p>
+<div class="codehilite"><pre><span></span>pipenv install requests
+pipenv install pyinstaller
 </pre></div>
 
 
-<p>Проверка наличия файла в системе:</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-  <span class="o">...</span>
-</pre></div>
-
-
-<p>Поиск файлов определенного расширения в текущей директории:</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
-<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.zip&quot;</span><span class="p">):</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Удаление файла:</p>
-<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Удаление директории:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># Вариант 1: уверенный</span>
-<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">call</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-  <span class="n">call</span><span class="p">((</span><span class="s2">&quot;rmdir /S /Q </span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="c1"># Вариант 2: не работает с read-only файлами и папками</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-  <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</pre></div>
-
-
-<hr />
-<h2 id="io">io<a class="headerlink" href="#io" title="Permanent link">&para;</a></h2>
-<p>Базовый функционал:</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">io</span>
-
-<span class="n">bytes_buffer</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span> <span class="c1"># Создание бинарного файла в RAM</span>
-<span class="n">bytes_buffer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1"># Запись данные в файл</span>
-<span class="k">print</span><span class="p">(</span><span class="n">bytes_buffer</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span> <span class="c1"># Печать размера файла, вернет реальный размер</span>
-
-<span class="n">bytes_buffer</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Перемещение к началу файла</span>
-<span class="k">print</span><span class="p">(</span><span class="n">bytes_buffer</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span> <span class="c1"># Вернет 0</span>
-
-<span class="n">bytes_buffer</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># Чтение данных из файла с последнего места до конца</span>
-<span class="k">print</span><span class="p">(</span><span class="n">bytes_buffer</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span> <span class="c1"># Вернет реальный размер</span>
-
-<span class="n">bytes_buffer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Закрытие файла для записи или чтения</span>
+<p>Запуск команды в среде проекта:</p>
+<div class="codehilite"><pre><span></span>pipenv run python script.py
+pipenv run pyinstaller --onefile --console -i icon.ico script.py
 </pre></div>
                 
                   
@@ -552,7 +443,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../python-import/" title="Импорт модулей" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../python-utilities/" title="Базовые библиотеки" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -561,19 +452,19 @@
                 <span class="md-footer-nav__direction">
                   Назад
                 </span>
-                Импорт модулей
+                Базовые библиотеки
               </span>
             </div>
           </a>
         
         
-          <a href="../python-pandas/" title="Анализ данных" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../instructions/" title="Markdown" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Вперед
                 </span>
-                Анализ данных
+                Markdown
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
