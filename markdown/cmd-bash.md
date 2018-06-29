@@ -109,3 +109,15 @@ pandoc -s -f markdown -t icml -o "output file.icml" "input file.md"
 ``` bash
 pandoc -s -f docx -t markdown -o "output file.md" --atx-headers --wrap=none --extract-media="" "input file.docx"
 ```
+
+## Работа с magick
+
+Конвертация .pdf в .png:
+``` bash
+magick convert -alpha off -density 600 -resize x1080 -depth 8 -quality 85 input.pdf output.png
+```
+
+Тест одной страницы:
+``` bash
+magick convert input.pdf[1] output.png
+```
