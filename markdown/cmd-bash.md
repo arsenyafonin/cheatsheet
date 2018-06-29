@@ -1,6 +1,6 @@
 # Shell-скрипты
 
-### Command Prompt
+## Command Prompt
 
 Пауза в случае ошибки исполнения команды:
 ``` cmd
@@ -17,7 +17,7 @@
 python -c "import sys; print('\n'.join(sys.path))"
 ```
 
-### Bash
+## Bash
 
 Изменение текущей директории на директорию скрипта:
 ``` bash
@@ -26,7 +26,7 @@ DIR=$(printf %q "$DIR")
 eval cd $DIR
 ```
 
-### Любая оболочка
+## Любая оболочка
 
 Конвертация .ipynb в .py-скрипт:
 
@@ -41,7 +41,7 @@ git ls-tree -r master --name-only # Show all tracked files
 git check-ignore * # Show ignored files
 ```
 
-### Работа с ffmpeg
+## Работа с ffmpeg
 
 Обрезка видеозаписей без конвертации с помощью ffmpeg возможна, однако не всегда работает корректно. Первый вариант обрезает видео по keyframe, а аудио по заданным параметрам, таким образом если keyframe не попадает на начало обрезанного отрезка, фрагмент до keyframe заполняется пустотой. Возможный вариант ухода от проблемы — поиск оптимального с точки зрения keyframe начала обрезки:
 ``` bash
@@ -68,7 +68,7 @@ ffmpeg -i input.mp4 -vn -acodec copy audio.aac
 ffmpeg -i input.mp4 -i audio.m4a -map 0:0 -map 1:0 output.mp4
 ```
 
-### Работа с mediainfo
+## Работа с mediainfo
 
 Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре `--Inform=`.
 ``` bash
@@ -90,4 +90,22 @@ Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%"
 Полный перечень параметров можно получить командой:
 ``` bash
 mediainfo --info-parameters
+```
+
+## Работа с pandoc
+
+Конвертация Markdown в InDesign .icml:
+``` bash
+pandoc -s -f markdown -t icml -o "output file.icml" "input file.md"
+```
+
+***
+
+По умолчанию Pandoc использует Setext-style headers, которые в теории допускают заголовки в две строчки. При выборе ATX-style headers (`--atx-headers`) заголовки в две строчки невозможны в принципе.
+
+При наличие в документе media-файлов возможно сохранение файлов в папку `media` в директории документа опцией `--extract-media=""`.
+
+Конвертация .docx в Markdown:
+``` bash
+pandoc -s -f docx -t markdown -o "output file.md" --atx-headers --wrap=none --extract-media="" "input file.docx"
 ```

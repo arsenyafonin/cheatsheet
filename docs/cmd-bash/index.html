@@ -324,6 +324,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pandoc" title="Работа с pandoc" class="md-nav__link">
+    Работа с pandoc
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -484,6 +491,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pandoc" title="Работа с pandoc" class="md-nav__link">
+    Работа с pandoc
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -500,7 +514,7 @@
                 
                 
                 <h1 id="shell-">Shell-скрипты<a class="headerlink" href="#shell-" title="Permanent link">&para;</a></h1>
-<h3 id="command-prompt">Command Prompt<a class="headerlink" href="#command-prompt" title="Permanent link">&para;</a></h3>
+<h2 id="command-prompt">Command Prompt<a class="headerlink" href="#command-prompt" title="Permanent link">&para;</a></h2>
 <p>Пауза в случае ошибки исполнения команды:</p>
 <div class="codehilite"><pre><span></span>@if NOT [&quot;%errorlevel%&quot;]==[&quot;0&quot;] pause
 </pre></div>
@@ -516,7 +530,7 @@
 </pre></div>
 
 
-<h3 id="bash">Bash<a class="headerlink" href="#bash" title="Permanent link">&para;</a></h3>
+<h2 id="bash">Bash<a class="headerlink" href="#bash" title="Permanent link">&para;</a></h2>
 <p>Изменение текущей директории на директорию скрипта:</p>
 <div class="codehilite"><pre><span></span><span class="nv">DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span> <span class="nb">cd</span> <span class="s2">&quot;</span><span class="k">$(</span> dirname <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">pwd</span> <span class="k">)</span><span class="s2">&quot;</span>
 <span class="nv">DIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span> %q <span class="s2">&quot;</span><span class="nv">$DIR</span><span class="s2">&quot;</span><span class="k">)</span>
@@ -524,7 +538,7 @@
 </pre></div>
 
 
-<h3 id="_1">Любая оболочка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="_1">Любая оболочка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Конвертация .ipynb в .py-скрипт:</p>
 <div class="codehilite"><pre><span></span>jupyter nbconvert --to script notebook_title.ipynb
 </pre></div>
@@ -536,7 +550,7 @@ git check-ignore * <span class="c1"># Show ignored files</span>
 </pre></div>
 
 
-<h3 id="ffmpeg">Работа с ffmpeg<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h3>
+<h2 id="ffmpeg">Работа с ffmpeg<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
 <p>Обрезка видеозаписей без конвертации с помощью ffmpeg возможна, однако не всегда работает корректно. Первый вариант обрезает видео по keyframe, а аудио по заданным параметрам, таким образом если keyframe не попадает на начало обрезанного отрезка, фрагмент до keyframe заполняется пустотой. Возможный вариант ухода от проблемы — поиск оптимального с точки зрения keyframe начала обрезки:</p>
 <div class="codehilite"><pre><span></span>ffmpeg -i input.mp4 -ss hh:mm:ss -c copy -to hh:mm:ss output.mp4
 </pre></div>
@@ -562,7 +576,7 @@ git check-ignore * <span class="c1"># Show ignored files</span>
 </pre></div>
 
 
-<h3 id="mediainfo">Работа с mediainfo<a class="headerlink" href="#mediainfo" title="Permanent link">&para;</a></h3>
+<h2 id="mediainfo">Работа с mediainfo<a class="headerlink" href="#mediainfo" title="Permanent link">&para;</a></h2>
 <p>Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре <code>--Inform=</code>.</p>
 <div class="codehilite"><pre><span></span>@cd %~dp0
 @mediainfo --Inform<span class="o">=</span>file://mediainfo-paramerts.txt <span class="s2">&quot;video file.mov&quot;</span>
@@ -582,6 +596,20 @@ Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%&quot;
 
 <p>Полный перечень параметров можно получить командой:</p>
 <div class="codehilite"><pre><span></span>mediainfo --info-parameters
+</pre></div>
+
+
+<h2 id="pandoc">Работа с pandoc<a class="headerlink" href="#pandoc" title="Permanent link">&para;</a></h2>
+<p>Конвертация Markdown в InDesign .icml:</p>
+<div class="codehilite"><pre><span></span>pandoc -s -f markdown -t icml -o <span class="s2">&quot;output file.icml&quot;</span> <span class="s2">&quot;input file.md&quot;</span>
+</pre></div>
+
+
+<hr />
+<p>По умолчанию Pandoc использует Setext-style headers, которые в теории допускают заголовки в две строчки. При выборе ATX-style headers (<code>--atx-headers</code>) заголовки в две строчки невозможны в принципе.</p>
+<p>При наличие в документе media-файлов возможно сохранение файлов в папку <code>media</code> в директории документа опцией <code>--extract-media=""</code>.</p>
+<p>Конвертация .docx в Markdown:</p>
+<div class="codehilite"><pre><span></span>pandoc -s -f docx -t markdown -o <span class="s2">&quot;output file.md&quot;</span> --atx-headers --wrap<span class="o">=</span>none --extract-media<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="s2">&quot;input file.docx&quot;</span>
 </pre></div>
                 
                   
