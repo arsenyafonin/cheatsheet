@@ -41,6 +41,12 @@ git ls-tree -r master --name-only # Show all tracked files
 git check-ignore * # Show ignored files
 ```
 
+``` bash
+# Change Github Release to latest commit
+git tag -f -a <tagname> -m "Any text" # <tagname> is Release version, e.g. v3.0
+git push -f --tags
+```
+
 ## Работа с ffmpeg
 
 Обрезка видеозаписей без конвертации с помощью ffmpeg возможна, однако не всегда работает корректно. Первый вариант обрезает видео по keyframe, а аудио по заданным параметрам, таким образом если keyframe не попадает на начало обрезанного отрезка, фрагмент до keyframe заполняется пустотой. Возможный вариант ухода от проблемы — поиск оптимального с точки зрения keyframe начала обрезки:

@@ -331,6 +331,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#magick" title="Работа с magick" class="md-nav__link">
+    Работа с magick
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -498,6 +505,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#magick" title="Работа с magick" class="md-nav__link">
+    Работа с magick
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -547,6 +561,12 @@
 <p>Работа с git:</p>
 <div class="codehilite"><pre><span></span>git ls-tree -r master --name-only <span class="c1"># Show all tracked files</span>
 git check-ignore * <span class="c1"># Show ignored files</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># Change Github Release to latest commit</span>
+git tag -f -a &lt;tagname&gt; -m <span class="s2">&quot;Any text&quot;</span> <span class="c1"># &lt;tagname&gt; is Release version, e.g. v3.0</span>
+git push -f --tags
 </pre></div>
 
 
@@ -610,6 +630,17 @@ Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%&quot;
 <p>При наличие в документе media-файлов возможно сохранение файлов в папку <code>media</code> в директории документа опцией <code>--extract-media=""</code>.</p>
 <p>Конвертация .docx в Markdown:</p>
 <div class="codehilite"><pre><span></span>pandoc -s -f docx -t markdown -o <span class="s2">&quot;output file.md&quot;</span> --atx-headers --wrap<span class="o">=</span>none --extract-media<span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="s2">&quot;input file.docx&quot;</span>
+</pre></div>
+
+
+<h2 id="magick">Работа с magick<a class="headerlink" href="#magick" title="Permanent link">&para;</a></h2>
+<p>Конвертация .pdf в .png:</p>
+<div class="codehilite"><pre><span></span>magick convert -alpha off -density <span class="m">600</span> -resize x1080 -depth <span class="m">8</span> -quality <span class="m">85</span> input.pdf output.png
+</pre></div>
+
+
+<p>Тест одной страницы:</p>
+<div class="codehilite"><pre><span></span>magick convert input.pdf<span class="o">[</span><span class="m">1</span><span class="o">]</span> output.png
 </pre></div>
                 
                   
