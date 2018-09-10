@@ -116,6 +116,26 @@ pandoc -s -f markdown -t icml -o "output file.icml" "input file.md"
 pandoc -s -f docx -t markdown -o "output file.md" --atx-headers --wrap=none --extract-media="" "input file.docx"
 ```
 
+Создание .epub из Markdown документа требует двух файлов: текста документа в Markdown и YAML-файла с метаданными (`metadata.txt`). Использование подзаголовка в метаданных поддерживает только EPUB 3:
+``` bash
+pandoc --atx-headers -t epub3 -o mybook.epub metadata.txt content.md
+```
+
+``` yaml
+---
+title:
+- type: main
+  text: Второй цифровой переворот
+- type: subtitle
+  text: Проектирование за пределами разума
+creator:
+- role: author
+  text: Марио Карпо
+rights: softculture.cc
+language: ru-RU
+...
+```
+
 ## Работа с magick
 
 Конвертация .pdf в .png:
