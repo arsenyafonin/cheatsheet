@@ -13,6 +13,9 @@ pages:
   - Регулярные выражения: 'python-regex.md'
   - Базовые библиотеки: 'python-utilities.md'
   - Среда: 'python-pipenv.md'
+- R:
+  - Импорт данных: 'R-data.md'
+  - Shiny: 'python-os.md'
 - Markdown: 'instructions.md'
 - Command Prompt | Bash: 'cmd-bash.md'
 - Система:
