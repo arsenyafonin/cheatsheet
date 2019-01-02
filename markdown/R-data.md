@@ -30,14 +30,14 @@ fetch_airtable = function(..., query=list()) {
   colnames(df) = gsub("fields.", "", colnames(df))
 
   if ("offset" %in% names(json)) {
-    df_nextpage = fetch_airtable(..., query=list(offset=json$offset))
+    df_nextpage = fetch_airtable(..., query=c(query, list(offset=json$offset)))
     return(bind_rows(df, df_nextpage))
   } else {
     return(df)
   }
 }
 
-at = fetch_airtable(AT_BASE, AT_TABLE, AT_TOKEN)
+at = fetch_airtable(AT_BASE, AT_TABLE, AT_TOKEN, query=list("filterByFormula"="(appsboard=1)"))
 ```
 
 ## Amazon S3

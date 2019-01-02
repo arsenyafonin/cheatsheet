@@ -540,14 +540,14 @@ fetch_airtable <span class="o">=</span> <span class="kr">function</span><span cl
   <span class="kp">colnames</span><span class="p">(</span>df<span class="p">)</span> <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;fields.&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kp">colnames</span><span class="p">(</span>df<span class="p">))</span>
 
   <span class="kr">if</span> <span class="p">(</span><span class="s">&quot;offset&quot;</span> <span class="o">%in%</span> <span class="kp">names</span><span class="p">(</span>json<span class="p">))</span> <span class="p">{</span>
-    df_nextpage <span class="o">=</span> fetch_airtable<span class="p">(</span><span class="kc">...</span><span class="p">,</span> query<span class="o">=</span><span class="kt">list</span><span class="p">(</span>offset<span class="o">=</span>json<span class="o">$</span>offset<span class="p">))</span>
+    df_nextpage <span class="o">=</span> fetch_airtable<span class="p">(</span><span class="kc">...</span><span class="p">,</span> query<span class="o">=</span><span class="kt">c</span><span class="p">(</span>query<span class="p">,</span> <span class="kt">list</span><span class="p">(</span>offset<span class="o">=</span>json<span class="o">$</span>offset<span class="p">)))</span>
     <span class="kr">return</span><span class="p">(</span>bind_rows<span class="p">(</span>df<span class="p">,</span> df_nextpage<span class="p">))</span>
   <span class="p">}</span> <span class="kr">else</span> <span class="p">{</span>
     <span class="kr">return</span><span class="p">(</span>df<span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-at <span class="o">=</span> fetch_airtable<span class="p">(</span>AT_BASE<span class="p">,</span> AT_TABLE<span class="p">,</span> AT_TOKEN<span class="p">)</span>
+at <span class="o">=</span> fetch_airtable<span class="p">(</span>AT_BASE<span class="p">,</span> AT_TABLE<span class="p">,</span> AT_TOKEN<span class="p">,</span> query<span class="o">=</span><span class="kt">list</span><span class="p">(</span><span class="s">&quot;filterByFormula&quot;</span><span class="o">=</span><span class="s">&quot;(appsboard=1)&quot;</span><span class="p">))</span>
 </pre></div>
 
 
