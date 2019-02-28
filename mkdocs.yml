@@ -15,7 +15,7 @@ pages:
   - Среда: 'python-pipenv.md'
 - R:
   - Импорт данных: 'R-data.md'
-  - Shiny: 'python-os.md'
+  - Shiny: 'R-shiny.md'
 - Markdown: 'instructions.md'
 - Command Prompt | Bash: 'cmd-bash.md'
 - Система:
