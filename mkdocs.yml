@@ -30,7 +30,7 @@ nav:
 theme:
     name: 'material'
     custom_dir: 'theme'
-    favicon: 'theme/assets/images/favicon.ico'
+    favicon: 'assets/images/fav.ico'
 
 # Options
 markdown_extensions:
