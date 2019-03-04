@@ -29,7 +29,8 @@ nav:
 # Documentation and theme
 theme:
     name: 'material'
-    custom_dir: 'theme/'
+    custom_dir: 'theme'
+    favicon: 'theme/assets/images/favicon.ico'
 
 # Options
 markdown_extensions:

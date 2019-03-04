@@ -12,6 +12,10 @@
 
 `disabled`: Show Spotlight search _(устраняет конфликт с_ `⌘Space` _для переключения языка в Punto Switcher)_
 
+### Accessabilty
+
+`disabled`: Turn VoiceOver on or off _(устраняет конфликт с_ `⌘F5` _для обновления влкладки fman)_
+
 ***
 
 ### App Shortcuts
