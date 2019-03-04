@@ -1,5 +1,8 @@
 
-<!DOCTYPE html>
+
+
+
+<!doctype html>
 <html lang="ru" class="no-js">
   <head>
     
@@ -12,9 +15,26 @@
       
       
       
-        <link rel="shortcut icon" href="../favicon.ico">
+        <meta name="lang:clipboard.copy" content="">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.0">
+        <meta name="lang:clipboard.copied" content="">
+      
+        <meta name="lang:search.language" content="">
+      
+        <meta name="lang:search.pipeline.stopwords" content="">
+      
+        <meta name="lang:search.pipeline.trimmer" content="">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -22,34 +42,32 @@
       
     
     
-      <script src="../assets/javascripts/modernizr-e826f8942a.js"></script>
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/application-b6a6d08807.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-23f75ab9c7.palette.css">
       
     
     
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
       
-        
-        
-        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="../extra.css">
     
     
+      
+    
+    
   </head>
   
-  
-  
-  
-    <body data-md-color-primary="cyan" data-md-color-accent="cyan">
+    <body dir="">
   
     <svg class="md-svg">
       <defs>
@@ -57,9 +75,14 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#pandas" tabindex="1" class="md-skip">
+        
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -67,43 +90,43 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://arsenyafonin.github.io/cheatsheet/" title="Arseny's Cheatsheet" class="md-header-nav__button md-logo">
           
-            <i class="md-icon md-icon--home"></i>
+            <i class="md-icon"></i>
           
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              
-                <span class="md-header-nav__parent">
-                  Python
-                </span>
-              
-            
-            Анализ данных
+            <span class="md-header-nav__topic">
+              Arseny's Cheatsheet
+            </span>
+            <span class="md-header-nav__topic">
+              Анализ данных
+            </span>
           
-        </span>
+        </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+      <input type="text" class="md-search__input" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="en, ru" data-md-lang-tokenizer="">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
             Type to start searching
           </div>
           <ol class="md-search-result__list"></ol>
@@ -121,6 +144,8 @@
     
     <div class="md-container">
       
+        
+      
       
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -130,12 +155,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <div class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://arsenyafonin.github.io/cheatsheet/" title="Arseny's Cheatsheet" class="md-nav__button md-logo">
       
-        <i class="md-icon md-icon--home"></i>
+        <i class="md-icon"></i>
       
-    </div>
+    </a>
     Arseny's Cheatsheet
   </label>
   
@@ -207,12 +232,12 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         Анализ данных
       </label>
     
@@ -227,7 +252,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Навигация</label>
+    <label class="md-nav__title" for="__toc">Навигация</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -278,6 +303,8 @@
   </a>
   
 </li>
+      
+      
       
       
       
@@ -366,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../python-os/" title="Shiny" class="md-nav__link">
+    <a href="../R-shiny/" title="Shiny" class="md-nav__link">
       Shiny
     </a>
   </li>
@@ -426,8 +453,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../shortcuts/" title="Горячие клавиши" class="md-nav__link">
-      Горячие клавиши
+    <a href="../shortcuts-windows/" title="Горячие клавиши (Windows)" class="md-nav__link">
+      Горячие клавиши (Windows)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shortcuts-mac/" title="Горячие клавиши (Mac OS)" class="md-nav__link">
+      Горячие клавиши (Mac OS)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../system-settings/" title="Настройка системы (Mac OS)" class="md-nav__link">
+      Настройка системы (Mac OS)
     </a>
   </li>
 
@@ -514,7 +565,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Навигация</label>
+    <label class="md-nav__title" for="__toc">Навигация</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -565,6 +616,8 @@
   </a>
   
 </li>
+      
+      
       
       
       
@@ -852,6 +905,8 @@
               
               
                 
+
+
               
             </article>
           </div>
@@ -901,13 +956,11 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -915,27 +968,12 @@
       
     </div>
     
-      <script src="../assets/javascripts/application-f3ab9e5ff8.js"></script>
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
       
-      
         
-        <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
-        
-          
-        
-          
-            
-            <script src="../assets/javascripts/lunr/lunr.ru.js"></script>
-          
-        
-        
-          <script src="../assets/javascripts/lunr/lunr.multi.js"></script>
         
       
-      <script>app.initialize({url:{base:".."}})</script>
-      
-    
-    
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
   </body>

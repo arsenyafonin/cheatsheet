@@ -2,9 +2,8 @@ site_name: Arseny's Cheatsheet
 site_url: 'https://arsenyafonin.github.io/cheatsheet/'
 docs_dir: markdown
 site_dir: docs
-site_favicon: 'favicon.ico'
 
-pages:
+nav:
 - Введение: 'index.md'
 - Python:
   - Импорт модулей: 'python-import.md'
@@ -19,20 +18,24 @@ pages:
 - Markdown: 'instructions.md'
 - Command Prompt | Bash: 'cmd-bash.md'
 - Система:
-  - Горячие клавиши: 'shortcuts.md'
+  - Горячие клавиши (Windows): 'shortcuts-windows.md'
+  - Горячие клавиши (Mac OS): 'shortcuts-mac.md'
+  - Настройка системы (Mac OS): 'system-settings.md'
 - Преднастройка:
     - Atom: 'atom.md'
     - AWS CLI: 'aws-cli.md'
     - Windows 10: 'system.md'
 
 # Documentation and theme
-theme: 'material'
-theme_dir: 'theme'
+theme:
+    name: 'material'
+    custom_dir: 'theme/'
 
 # Options
 markdown_extensions:
   - admonition
-  - toc(permalink=true)
+  - toc:
+      permalink: true
   - codehilite
 
 extra:

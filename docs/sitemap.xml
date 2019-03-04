@@ -1,116 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//python-import/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/python-import/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//python-os/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/python-os/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//python-pandas/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/python-pandas/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//python-regex/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/python-regex/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//python-utilities/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/python-utilities/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//python-pipenv/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/python-pipenv/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//R-data/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/R-data/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//python-os/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/R-shiny/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//instructions/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/instructions/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//cmd-bash/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/cmd-bash/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//shortcuts/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/shortcuts-windows/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//atom/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/shortcuts-mac/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//aws-cli/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/system-settings/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://arsenyafonin.github.io/cheatsheet//system/</loc>
-     <lastmod>2019-01-03</lastmod>
+     <loc>https://arsenyafonin.github.io/cheatsheet/atom/</loc>
+     <lastmod>2019-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
+    <url>
+     <loc>https://arsenyafonin.github.io/cheatsheet/aws-cli/</loc>
+     <lastmod>2019-03-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://arsenyafonin.github.io/cheatsheet/system/</loc>
+     <lastmod>2019-03-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>

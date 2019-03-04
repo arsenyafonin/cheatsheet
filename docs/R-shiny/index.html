@@ -1,0 +1,754 @@
+
+
+
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://arsenyafonin.github.io/cheatsheet/R-shiny/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="">
+      
+        <meta name="lang:clipboard.copied" content="">
+      
+        <meta name="lang:search.language" content="">
+      
+        <meta name="lang:search.pipeline.stopwords" content="">
+      
+        <meta name="lang:search.pipeline.trimmer" content="">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>Shiny - Arseny's Cheatsheet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#shiny" tabindex="1" class="md-skip">
+        
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://arsenyafonin.github.io/cheatsheet/" title="Arseny's Cheatsheet" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Arseny's Cheatsheet
+            </span>
+            <span class="md-header-nav__topic">
+              Shiny
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://arsenyafonin.github.io/cheatsheet/" title="Arseny's Cheatsheet" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Arseny's Cheatsheet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Введение" class="md-nav__link">
+      Введение
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-import/" title="Импорт модулей" class="md-nav__link">
+      Импорт модулей
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-os/" title="Работа с файлами" class="md-nav__link">
+      Работа с файлами
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-pandas/" title="Анализ данных" class="md-nav__link">
+      Анализ данных
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-regex/" title="Регулярные выражения" class="md-nav__link">
+      Регулярные выражения
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-utilities/" title="Базовые библиотеки" class="md-nav__link">
+      Базовые библиотеки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python-pipenv/" title="Среда" class="md-nav__link">
+      Среда
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../R-data/" title="Импорт данных" class="md-nav__link">
+      Импорт данных
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Shiny
+      </label>
+    
+    <a href="./" title="Shiny" class="md-nav__link md-nav__link--active">
+      Shiny
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Проверка пароля" class="md-nav__link">
+    Проверка пароля
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../instructions/" title="Markdown" class="md-nav__link">
+      Markdown
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cmd-bash/" title="Command Prompt | Bash" class="md-nav__link">
+      Command Prompt | Bash
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Система
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Система
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shortcuts-windows/" title="Горячие клавиши (Windows)" class="md-nav__link">
+      Горячие клавиши (Windows)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shortcuts-mac/" title="Горячие клавиши (Mac OS)" class="md-nav__link">
+      Горячие клавиши (Mac OS)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../system-settings/" title="Настройка системы (Mac OS)" class="md-nav__link">
+      Настройка системы (Mac OS)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Преднастройка
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Преднастройка
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../atom/" title="Atom" class="md-nav__link">
+      Atom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aws-cli/" title="AWS CLI" class="md-nav__link">
+      AWS CLI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../system/" title="Windows 10" class="md-nav__link">
+      Windows 10
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Навигация</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="Проверка пароля" class="md-nav__link">
+    Проверка пароля
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="shiny">Библиотека Shiny<a class="headerlink" href="#shiny" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Проверка пароля<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>app.R</code></p>
+<div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">shinyjs</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">openssl</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">promises</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">future</span><span class="p">)</span>
+<span class="nf">plan</span><span class="p">(</span><span class="n">multiprocess</span><span class="p">)</span>
+
+<span class="nf">source</span><span class="p">(</span><span class="s">&quot;airtable-functions.R&quot;</span><span class="p">)</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&quot;passchecker-functions.R&quot;</span><span class="p">)</span>
+
+<span class="n">AT_TOKEN</span> <span class="o">=</span> <span class="s">&quot;keyi3rdNkTBePnkDX&quot;</span>
+
+<span class="c1"># UI</span>
+<span class="n">ui</span> <span class="o">=</span> <span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="nf">includeCSS</span><span class="p">(</span><span class="s">&quot;styles.css&quot;</span><span class="p">),</span>
+  <span class="nf">useShinyjs</span><span class="p">(),</span>
+  <span class="nf">extendShinyjs</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">js_code</span><span class="p">),</span>
+  <span class="n">tags</span><span class="o">$</span><span class="nf">script</span><span class="p">(</span><span class="n">js_enter</span><span class="p">),</span>
+  <span class="nf">fluidRow</span><span class="p">(</span>
+    <span class="nf">column</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="nf">div</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s">&quot;height: 30px&quot;</span><span class="p">,</span> <span class="nf">img</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s">&quot;loader.gif&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="s">&quot;30px&quot;</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="s">&quot;30px&quot;</span><span class="p">))),</span>
+    <span class="n">id</span><span class="o">=</span><span class="s">&quot;loader&quot;</span>
+    <span class="p">),</span>
+  <span class="nf">fluidRow</span><span class="p">(</span>
+    <span class="nf">column</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="nf">textInput</span><span class="p">(</span><span class="n">inputId</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;Введите личный пароль и нажмите Enter:&quot;</span><span class="p">,</span> <span class="n">placeholder</span> <span class="o">=</span> <span class="s">&quot;my password&quot;</span><span class="p">)),</span>
+    <span class="n">id</span><span class="o">=</span><span class="s">&quot;password-input&quot;</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Server</span>
+<span class="n">server</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># Asyncronous passwords retrieval</span>
+  <span class="nf">future</span><span class="p">({</span><span class="nf">airtable_passes</span><span class="p">(</span><span class="n">AT_TOKEN</span><span class="p">)})</span> <span class="o">%...&gt;%</span> <span class="p">{</span>
+    <span class="nf">assign</span><span class="p">(</span><span class="s">&quot;PASSWORDS&quot;</span><span class="p">,</span> <span class="n">.,</span> <span class="n">envir</span> <span class="o">=</span> <span class="n">.GlobalEnv</span><span class="p">)</span> <span class="c1"># PASSWORDS in global env</span>
+    <span class="n">js</span><span class="o">$</span><span class="nf">getPassword</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="c1"># Password validation</span>
+  <span class="nf">observeEvent</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">temppass</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">is.null</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">temppass</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nf">exists</span><span class="p">(</span><span class="s">&quot;PASSWORDS&quot;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nf">if </span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">temppass</span> <span class="o">%in%</span> <span class="n">PASSWORDS</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">js</span><span class="o">$</span><span class="nf">log</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#39;login successful: &#39;</span><span class="p">,</span> <span class="n">input</span><span class="o">$</span><span class="n">temppass</span><span class="p">))</span>
+        <span class="nf">hide</span><span class="p">(</span><span class="s">&quot;password-input&quot;</span><span class="p">)</span>
+        <span class="nf">showNotification</span><span class="p">(</span><span class="s">&#39;Logged in successfully&#39;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;message&quot;</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+        <span class="c1"># ...</span>
+      <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">temppass</span> <span class="o">==</span> <span class="s">&#39;NA&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1"># First login</span>
+        <span class="nf">hide</span><span class="p">(</span><span class="s">&quot;loader&quot;</span><span class="p">)</span>
+        <span class="nf">show</span><span class="p">(</span><span class="s">&quot;password-input&quot;</span><span class="p">)</span>
+      <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="c1"># Wrong password</span>
+        <span class="nf">showNotification</span><span class="p">(</span><span class="s">&#39;Invalid password&#39;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;error&quot;</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+
+  <span class="c1"># Password enter</span>
+  <span class="nf">observeEvent</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">enterkey</span><span class="p">,</span> <span class="p">{</span>
+    <span class="n">input</span> <span class="o">=</span> <span class="nf">tolower</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">password</span><span class="p">)</span>
+    <span class="n">encrypted_input</span> <span class="o">=</span> <span class="nf">sha256</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">input</span><span class="p">)</span>
+    <span class="n">js</span><span class="o">$</span><span class="nf">setPassword</span><span class="p">(</span><span class="n">encrypted_input</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1"># Run the application</span>
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>passchecker-functions.R</code></p>
+<div class="codehilite"><pre><span></span><span class="c1"># ShinyJS code</span>
+<span class="n">js_code</span> <span class="o">=</span> <span class="s">&quot;</span>
+<span class="s">shinyjs.getPassword = function() {</span>
+<span class="s">  if (localStorage.getItem(&#39;password&#39;) === null) {</span>
+<span class="s">    console.log(&#39;no cookie&#39;);</span>
+<span class="s">    Shiny.onInputChange(&#39;temppass&#39;, &#39;NA&#39;);</span>
+<span class="s">  } else {</span>
+<span class="s">    console.log(&#39;found in cookies: &#39;, localStorage.password);</span>
+<span class="s">    Shiny.onInputChange(&#39;temppass&#39;, localStorage.password);</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+<span class="s">shinyjs.setPassword = function(password) {</span>
+<span class="s">  localStorage.password = password;</span>
+<span class="s">  console.log(&#39;written to cookies: &#39;, localStorage.password);</span>
+<span class="s">  Shiny.onInputChange(&#39;temppass&#39;, localStorage.password);</span>
+<span class="s">}</span>
+<span class="s">shinyjs.log = function(string) {console.log(string.toString());}</span>
+<span class="s">&quot;</span>
+
+<span class="c1"># Custom JQuery code</span>
+<span class="n">js_enter</span> <span class="o">=</span> <span class="s">&quot;</span>
+<span class="s">$(document).on(&#39;keyup&#39;, function(e) {</span>
+<span class="s">  if(e.keyCode == 13) {Shiny.onInputChange(&#39;enterkey&#39;, Math.random());}</span>
+<span class="s">});</span>
+<span class="s">&quot;</span>
+
+<span class="c1"># Airtable passwords retrieval function</span>
+<span class="n">airtable_passes</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">token</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">at</span> <span class="o">=</span> <span class="nf">fetch_airtable</span><span class="p">(</span><span class="s">&quot;https://api.airtable.com/v0/appysOdiKmcKSAWU1/&quot;</span><span class="p">,</span> <span class="s">&quot;team&quot;</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span>
+    <span class="n">query</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;filterByFormula&quot;</span><span class="o">=</span><span class="s">&quot;AND(status = &#39;active&#39;, password != &#39;&#39;)&quot;</span><span class="p">))</span>
+  <span class="nf">return</span><span class="p">(</span><span class="n">at</span><span class="o">$</span><span class="n">password</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><code>styles.css</code></p>
+<div class="codehilite"><pre><span></span><span class="c">/* Password validation CSS */</span>
+<span class="p">#</span><span class="nn">password-input</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">#</span><span class="nn">shiny-notification-panel</span> <span class="p">{</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../R-data/" title="Импорт данных" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Импорт данных
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../instructions/" title="Markdown" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Markdown
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+      
+        
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
