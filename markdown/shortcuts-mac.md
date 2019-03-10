@@ -54,5 +54,5 @@ See [Reference](https://pqrs.org/osx/karabiner/json.html) for details.
 Telegram Desktop:  
 `⌘↑`: Move to the previous chat  
 `⌘↓`: Move to the next chat  
-`⌘←`: Exit selected chat and search Telegram
+`⌘←`: Exit selected chat and search Telegram  
 `⌘T`: Show/Hide Telegram

@@ -1,4 +1,4 @@
-site_name: Arseny's Cheatsheet
+site_name: カンニングペーパー
 site_url: 'https://arsenyafonin.github.io/cheatsheet/'
 docs_dir: markdown
 site_dir: docs
@@ -21,16 +21,25 @@ nav:
   - Горячие клавиши (Windows): 'shortcuts-windows.md'
   - Горячие клавиши (Mac OS): 'shortcuts-mac.md'
   - Настройка системы (Mac OS): 'system-settings.md'
-- Преднастройка:
-    - Atom: 'atom.md'
-    - AWS CLI: 'aws-cli.md'
-    - Windows 10: 'system.md'
+- Приложения:
+    - Atom: 'apps-atom.md'
+    - AWS CLI: 'apps-aws-cli.md'
 
 # Documentation and theme
 theme:
     name: 'material'
     custom_dir: 'theme'
+    language: 'ja'
     favicon: 'assets/images/fav.png'
+    logo: 'assets/images/icon.png'
+    palette:
+      primary: 'white'
+      accent: 'teal'
+
+extra_css: ['assets/stylesheets/extra.css']
+
+repo_name: 'noideaatall/cheatsheet'
+repo_url: 'https://github.com/arsenyafonin/cheatsheet'
 
 # Options
 markdown_extensions:
@@ -38,10 +47,3 @@ markdown_extensions:
   - toc:
       permalink: true
   - codehilite
-
-extra:
-  palette:
-    primary: 'cyan'
-    accent: 'cyan'
-
-extra_css: [extra.css]
