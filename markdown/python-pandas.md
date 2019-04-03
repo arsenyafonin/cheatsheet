@@ -18,7 +18,7 @@ from io import BytesIO
 pickle_url = 'https://example.com/pickle_file.pkl'
 r = requests.get(pickle_url).content
 
-df = pd.read_pickle(BytesIO(r))
+df = pd.read_pickle(BytesIO(r), compression=None)
 ```
 Импорт из .xlsx:
 ``` python

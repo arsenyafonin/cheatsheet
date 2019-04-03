@@ -37,6 +37,12 @@ jupyter nbconvert --to script notebook_title.ipynb
 Работа с git:
 
 ``` bash
+git remote -v # Show remote URL
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git # Change 'origin' remote URL
+git push origin master # Push to master branch of 'origin' remote URL
+```
+
+``` bash
 git ls-tree -r master --name-only # Show all tracked files
 git check-ignore * # Show ignored files
 ```
