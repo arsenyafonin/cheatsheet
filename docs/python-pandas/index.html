@@ -710,7 +710,7 @@
 <span class="n">pickle_url</span> <span class="o">=</span> <span class="s1">&#39;https://example.com/pickle_file.pkl&#39;</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pickle_url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 

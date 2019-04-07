@@ -19,3 +19,9 @@ pipenv install pyinstaller
 pipenv run python script.py
 pipenv run pyinstaller --onefile --console -i icon.ico script.py
 ```
+
+Переход в среду проекта
+``` cmd
+pipenv shell
+exit
+```
