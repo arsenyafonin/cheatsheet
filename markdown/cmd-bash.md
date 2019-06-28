@@ -80,6 +80,14 @@ ffmpeg -i input.mp4 -vn -acodec copy audio.aac
 ffmpeg -i input.mp4 -i audio.m4a -map 0:0 -map 1:0 output.mp4
 ```
 
+Снятие DRM-защиты с Audible аудиокниги:
+``` bash
+# AUTHCODE for fettti@yandex.ru: 7db62636
+ffmpeg -activation_bytes AUTHCODE -i input.aax -c copy output.m4b
+```
+
+Вычислить AUTHCODE получилось с помощью [плагина](https://github.com/inAudible-NG/tables) на RainbowCrack, используя `rcrack.exe` с Wine на Mac OS, предварительно переместив rainbow tables (.rtc) из корня в папку `run`.
+
 ## Работа с mediainfo
 
 Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре `--Inform=`.
@@ -152,4 +160,17 @@ magick convert -alpha off -density 600 -resize x1080 -depth 8 -quality 85 input.
 Тест одной страницы:
 ``` bash
 magick convert input.pdf[1] output.png
+```
+
+## Создание образа диска (Mac OS)
+
+Вывод всех доступных дисков:
+``` bash
+diskutil list
+```
+
+Создание образа диска:
+``` bash
+sudo diskutil unmount /dev/diskХ
+dd if=/dev/diskХ of=output.iso # Может занять до 30 минут
 ```

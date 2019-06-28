@@ -16,7 +16,7 @@ nav:
   - Импорт данных: 'R-data.md'
   - Shiny: 'R-shiny.md'
 - Markdown: 'instructions.md'
-- Command Prompt | Bash: 'cmd-bash.md'
+- Shell: 'cmd-bash.md'
 - Система:
   - Горячие клавиши (Windows): 'shortcuts-windows.md'
   - Горячие клавиши (Mac OS): 'shortcuts-mac.md'
