@@ -38,7 +38,7 @@
     
     
       
-        <title>Command Prompt | Bash - カンニングペーパー</title>
+        <title>Shell - カンニングペーパー</title>
       
     
     
@@ -131,7 +131,7 @@
               カンニングペーパー
             </span>
             <span class="md-header-nav__topic">
-              Command Prompt | Bash
+              Shell
             </span>
           
         </div>
@@ -418,11 +418,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Command Prompt | Bash
+        Shell
       </label>
     
-    <a href="./" title="Command Prompt | Bash" class="md-nav__link md-nav__link--active">
-      Command Prompt | Bash
+    <a href="./" title="Shell" class="md-nav__link md-nav__link--active">
+      Shell
     </a>
     
       
@@ -480,6 +480,13 @@
         <li class="md-nav__item">
   <a href="#magick" title="Работа с magick" class="md-nav__link">
     Работа с magick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-os" title="Создание образа диска (Mac OS)" class="md-nav__link">
+    Создание образа диска (Mac OS)
   </a>
   
 </li>
@@ -672,6 +679,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mac-os" title="Создание образа диска (Mac OS)" class="md-nav__link">
+    Создание образа диска (Mac OS)
+  </a>
+  
+</li>
+      
       
       
       
@@ -766,6 +780,13 @@ git push -f --tags
 </pre></div>
 
 
+<p>Снятие DRM-защиты с Audible аудиокниги:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># AUTHCODE for fettti@yandex.ru: 7db62636</span>
+ffmpeg -activation_bytes AUTHCODE -i input.aax -c copy output.m4b
+</pre></div>
+
+
+<p>Вычислить AUTHCODE получилось с помощью <a href="https://github.com/inAudible-NG/tables">плагина</a> на RainbowCrack, используя <code>rcrack.exe</code> с Wine на Mac OS, предварительно переместив rainbow tables (.rtc) из корня в папку <code>run</code>.</p>
 <h2 id="mediainfo">Работа с mediainfo<a class="headerlink" href="#mediainfo" title="Permanent link">&para;</a></h2>
 <p>Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре <code>--Inform=</code>.</p>
 <div class="codehilite"><pre><span></span>@cd %~dp0
@@ -831,6 +852,18 @@ Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%&quot;
 
 <p>Тест одной страницы:</p>
 <div class="codehilite"><pre><span></span>magick convert input.pdf<span class="o">[</span><span class="m">1</span><span class="o">]</span> output.png
+</pre></div>
+
+
+<h2 id="mac-os">Создание образа диска (Mac OS)<a class="headerlink" href="#mac-os" title="Permanent link">&para;</a></h2>
+<p>Вывод всех доступных дисков:</p>
+<div class="codehilite"><pre><span></span>diskutil list
+</pre></div>
+
+
+<p>Создание образа диска:</p>
+<div class="codehilite"><pre><span></span>sudo diskutil unmount /dev/diskХ
+dd <span class="k">if</span><span class="o">=</span>/dev/diskХ <span class="nv">of</span><span class="o">=</span>output.iso <span class="c1"># Может занять до 30 минут</span>
 </pre></div>
                 
                   
