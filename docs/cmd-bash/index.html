@@ -864,6 +864,7 @@ Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%&quot;
 <p>Создание образа диска:</p>
 <div class="codehilite"><pre><span></span>sudo diskutil unmount /dev/diskХ
 dd <span class="k">if</span><span class="o">=</span>/dev/diskХ <span class="nv">of</span><span class="o">=</span>output.iso <span class="c1"># Может занять до 30 минут</span>
+diskutil eject /dev/diskX <span class="c1"># Извлечение диска</span>
 </pre></div>
                 
                   

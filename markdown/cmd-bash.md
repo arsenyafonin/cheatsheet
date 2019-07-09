@@ -173,4 +173,5 @@ diskutil list
 ``` bash
 sudo diskutil unmount /dev/diskХ
 dd if=/dev/diskХ of=output.iso # Может занять до 30 минут
+diskutil eject /dev/diskX # Извлечение диска
 ```
