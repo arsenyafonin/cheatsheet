@@ -464,6 +464,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#atomicparsley" title="Работа с AtomicParsley" class="md-nav__link">
+    Работа с AtomicParsley
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mediainfo" title="Работа с mediainfo" class="md-nav__link">
     Работа с mediainfo
   </a>
@@ -659,6 +666,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#atomicparsley" title="Работа с AtomicParsley" class="md-nav__link">
+    Работа с AtomicParsley
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mediainfo" title="Работа с mediainfo" class="md-nav__link">
     Работа с mediainfo
   </a>
@@ -787,6 +801,35 @@ ffmpeg -activation_bytes AUTHCODE -i input.aax -c copy output.m4b
 
 
 <p>Вычислить AUTHCODE получилось с помощью <a href="https://github.com/inAudible-NG/tables">плагина</a> на RainbowCrack, используя <code>rcrack.exe</code> с Wine на Mac OS, предварительно переместив rainbow tables (.rtc) из корня в папку <code>run</code>.</p>
+<p>Удаление лишних стримов или конвертация аудиокниги:</p>
+<div class="codehilite"><pre><span></span>ffmpeg -i audiobook.m4b -map <span class="m">0</span>:0 -c copy output.m4b <span class="c1"># экспорт стрима &#39;0&#39; с главами</span>
+ffmpeg -i audiobook.m4b -map <span class="m">0</span>:0 -c:a aac -b:a 128k output.m4b <span class="c1"># конвертация стрима &#39;0&#39; в 128 kbps</span>
+</pre></div>
+
+
+<h2 id="atomicparsley">Работа с AtomicParsley<a class="headerlink" href="#atomicparsley" title="Permanent link">&para;</a></h2>
+<p>Вывод информации о файле:</p>
+<div class="codehilite"><pre><span></span>AtomicParsley audiobook.m4b -t
+</pre></div>
+
+
+<p>Работа с обложкой:</p>
+<div class="codehilite"><pre><span></span>AtomicParsley audiobook.m4b --artwork REMOVE_ALL <span class="c1"># удаление всех обложек</span>
+AtomicParsley audiobook.m4b --artwork cover.png --overWrite <span class="c1"># добавление обложки (.png, 600×600)</span>
+AtomicParsley audiobook.m4b --extractPix <span class="c1"># экспорт обложки в директорию книги</span>
+</pre></div>
+
+
+<p>Работа с тэгами:</p>
+<div class="codehilite"><pre><span></span>AtomicParsley audiobook.m4b --artist <span class="s2">&quot;{author}&quot;</span> <span class="se">\ </span><span class="c1"># Имя Фамилия автора</span>
+  --albumArtist <span class="s2">&quot;{narrator}&quot;</span> <span class="se">\ </span><span class="c1"># Имя Фамилия нарратора</span>
+  --genre <span class="s2">&quot;Audiobook&quot;</span> <span class="se">\</span>
+  --title <span class="s2">&quot;{title}&quot;</span> --album <span class="s2">&quot;{title}&quot;</span> <span class="se">\ </span><span class="c1"># Название книги</span>
+  --year <span class="o">{</span>YYYY<span class="o">}</span> <span class="se">\ </span><span class="c1"># Год выпуска аудиокниги (или печатной)</span>
+  --description <span class="s2">&quot;made by highandmighty&quot;</span> --overWrite <span class="c1"># Перезапись исходного файла</span>
+</pre></div>
+
+
 <h2 id="mediainfo">Работа с mediainfo<a class="headerlink" href="#mediainfo" title="Permanent link">&para;</a></h2>
 <p>Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре <code>--Inform=</code>.</p>
 <div class="codehilite"><pre><span></span>@cd %~dp0

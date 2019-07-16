@@ -88,6 +88,35 @@ ffmpeg -activation_bytes AUTHCODE -i input.aax -c copy output.m4b
 
 Вычислить AUTHCODE получилось с помощью [плагина](https://github.com/inAudible-NG/tables) на RainbowCrack, используя `rcrack.exe` с Wine на Mac OS, предварительно переместив rainbow tables (.rtc) из корня в папку `run`.
 
+Удаление лишних стримов или конвертация аудиокниги:
+``` bash
+ffmpeg -i audiobook.m4b -map 0:0 -c copy output.m4b # экспорт стрима '0' с главами
+ffmpeg -i audiobook.m4b -map 0:0 -c:a aac -b:a 128k output.m4b # конвертация стрима '0' в 128 kbps
+```
+
+## Работа с AtomicParsley
+Вывод информации о файле:
+``` bash
+AtomicParsley audiobook.m4b -t
+```
+
+Работа с обложкой:
+``` bash
+AtomicParsley audiobook.m4b --artwork REMOVE_ALL # удаление всех обложек
+AtomicParsley audiobook.m4b --artwork cover.png --overWrite # добавление обложки (.png, 600×600)
+AtomicParsley audiobook.m4b --extractPix # экспорт обложки в директорию книги
+```
+
+Работа с тэгами:
+``` bash
+AtomicParsley audiobook.m4b --artist "{author}" \ # Имя Фамилия автора
+  --albumArtist "{narrator}" \ # Имя Фамилия нарратора
+  --genre "Audiobook" \
+  --title "{title}" --album "{title}" \ # Название книги
+  --year {YYYY} \ # Год выпуска аудиокниги (или печатной)
+  --description "made by highandmighty" --overWrite # Перезапись исходного файла
+```
+
 ## Работа с mediainfo
 
 Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре `--Inform=`.
