@@ -464,6 +464,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mp4v2" title="Работа с mp4v2" class="md-nav__link">
+    Работа с mp4v2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#atomicparsley" title="Работа с AtomicParsley" class="md-nav__link">
     Работа с AtomicParsley
   </a>
@@ -666,6 +673,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mp4v2" title="Работа с mp4v2" class="md-nav__link">
+    Работа с mp4v2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#atomicparsley" title="Работа с AtomicParsley" class="md-nav__link">
     Работа с AtomicParsley
   </a>
@@ -807,6 +821,20 @@ ffmpeg -i audiobook.m4b -map <span class="m">0</span>:0 -c:a aac -b:a 128k outpu
 </pre></div>
 
 
+<h2 id="mp4v2">Работа с mp4v2<a class="headerlink" href="#mp4v2" title="Permanent link">&para;</a></h2>
+<p>Установка:</p>
+<div class="codehilite"><pre><span></span>brew install mp4v2
+</pre></div>
+
+
+<p>Работа с главами (последовательность важна):</p>
+<div class="codehilite"><pre><span></span>mp4chaps -l audiobook.m4b <span class="c1"># Вывод глав</span>
+mp4chaps -x audiobook.m4b <span class="c1"># Экспорт глав в файл audiobook.chapters.txt</span>
+mp4chaps -r audiobook.m4b <span class="c1"># Удаление всех глав</span>
+mp4chaps -i audiobook.m4b <span class="c1"># Импорт глав из файла audiobook.chapters.txt в той же директории</span>
+</pre></div>
+
+
 <h2 id="atomicparsley">Работа с AtomicParsley<a class="headerlink" href="#atomicparsley" title="Permanent link">&para;</a></h2>
 <p>Вывод информации о файле:</p>
 <div class="codehilite"><pre><span></span>AtomicParsley audiobook.m4b -t
@@ -821,12 +849,16 @@ AtomicParsley audiobook.m4b --extractPix <span class="c1"># экспорт об�
 
 
 <p>Работа с тэгами:</p>
-<div class="codehilite"><pre><span></span>AtomicParsley audiobook.m4b --artist <span class="s2">&quot;{author}&quot;</span> <span class="se">\ </span><span class="c1"># Имя Фамилия автора</span>
+<div class="codehilite"><pre><span></span>AtomicParsley audiobook.m4b --metaEnema <span class="c1"># Удаление всех тэгов</span>
+
+AtomicParsley audiobook.m4b --artist <span class="s2">&quot;{author}&quot;</span> <span class="se">\ </span><span class="c1"># Имя Фамилия автора</span>
   --albumArtist <span class="s2">&quot;{narrator}&quot;</span> <span class="se">\ </span><span class="c1"># Имя Фамилия нарратора</span>
-  --genre <span class="s2">&quot;Audiobook&quot;</span> <span class="se">\</span>
   --title <span class="s2">&quot;{title}&quot;</span> --album <span class="s2">&quot;{title}&quot;</span> <span class="se">\ </span><span class="c1"># Название книги</span>
   --year <span class="o">{</span>YYYY<span class="o">}</span> <span class="se">\ </span><span class="c1"># Год выпуска аудиокниги (или печатной)</span>
-  --description <span class="s2">&quot;made by highandmighty&quot;</span> --overWrite <span class="c1"># Перезапись исходного файла</span>
+  --genre <span class="s2">&quot;Audiobook&quot;</span> <span class="se">\</span>
+  --stik <span class="nv">value</span><span class="o">=</span><span class="m">2</span> <span class="se">\ </span><span class="c1"># &#39;Kind of Media&#39; тэг для iTunes</span>
+  --description <span class="s2">&quot;made by highandmighty&quot;</span> <span class="se">\</span>
+  --overWrite <span class="c1"># Перезапись исходного файла</span>
 </pre></div>
 
 

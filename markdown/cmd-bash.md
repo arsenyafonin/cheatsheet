@@ -94,7 +94,23 @@ ffmpeg -i audiobook.m4b -map 0:0 -c copy output.m4b # экспорт стрим�
 ffmpeg -i audiobook.m4b -map 0:0 -c:a aac -b:a 128k output.m4b # конвертация стрима '0' в 128 kbps
 ```
 
+## Работа с mp4v2
+
+Установка:
+``` bash
+brew install mp4v2
+```
+
+Работа с главами (последовательность важна):
+``` bash
+mp4chaps -l audiobook.m4b # Вывод глав
+mp4chaps -x audiobook.m4b # Экспорт глав в файл audiobook.chapters.txt
+mp4chaps -r audiobook.m4b # Удаление всех глав
+mp4chaps -i audiobook.m4b # Импорт глав из файла audiobook.chapters.txt в той же директории
+```
+
 ## Работа с AtomicParsley
+
 Вывод информации о файле:
 ``` bash
 AtomicParsley audiobook.m4b -t
@@ -109,12 +125,16 @@ AtomicParsley audiobook.m4b --extractPix # экспорт обложки в ди
 
 Работа с тэгами:
 ``` bash
+AtomicParsley audiobook.m4b --metaEnema # Удаление всех тэгов
+
 AtomicParsley audiobook.m4b --artist "{author}" \ # Имя Фамилия автора
   --albumArtist "{narrator}" \ # Имя Фамилия нарратора
-  --genre "Audiobook" \
   --title "{title}" --album "{title}" \ # Название книги
   --year {YYYY} \ # Год выпуска аудиокниги (или печатной)
-  --description "made by highandmighty" --overWrite # Перезапись исходного файла
+  --genre "Audiobook" \
+  --stik value=2 \ # 'Kind of Media' тэг для iTunes
+  --description "made by highandmighty" \
+  --overWrite # Перезапись исходного файла
 ```
 
 ## Работа с mediainfo
