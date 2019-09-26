@@ -26,11 +26,12 @@ call_airtable = function(base, table, token, query) {
 fetch_airtable = function(..., query=list()) {
   json = call_airtable(..., query=query)
   df = json$records
-  df = flatten(df)
+  df = jsonlite::flatten(df) # 'rlang' package can mask 'flatten' function
   colnames(df) = gsub("fields.", "", colnames(df))
 
   if ("offset" %in% names(json)) {
-    df_nextpage = fetch_airtable(..., query=c(query, list(offset=json$offset)))
+    query["offset"] = json$offset
+    df_nextpage = fetch_airtable(..., query=query)
     return(bind_rows(df, df_nextpage))
   } else {
     return(df)
