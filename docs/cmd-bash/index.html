@@ -478,6 +478,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#metaflac" title="Работа с metaflac" class="md-nav__link">
+    Работа с metaflac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mediainfo" title="Работа с mediainfo" class="md-nav__link">
     Работа с mediainfo
   </a>
@@ -687,6 +694,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#metaflac" title="Работа с metaflac" class="md-nav__link">
+    Работа с metaflac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mediainfo" title="Работа с mediainfo" class="md-nav__link">
     Работа с mediainfo
   </a>
@@ -859,6 +873,18 @@ AtomicParsley audiobook.m4b --artist <span class="s2">&quot;{author}&quot;</span
   --stik <span class="nv">value</span><span class="o">=</span><span class="m">2</span> <span class="se">\ </span><span class="c1"># &#39;Kind of Media&#39; тэг для iTunes</span>
   --description <span class="s2">&quot;made by highandmighty&quot;</span> <span class="se">\</span>
   --overWrite <span class="c1"># Перезапись исходного файла</span>
+</pre></div>
+
+
+<h2 id="metaflac">Работа с metaflac<a class="headerlink" href="#metaflac" title="Permanent link">&para;</a></h2>
+<p>Экспорт обложек файлов .flac:</p>
+<div class="codehilite"><pre><span></span>metaflac --export-picture-to<span class="o">=</span><span class="s2">&quot;cover.jpg&quot;</span> <span class="s2">&quot;file.flac&quot;</span> <span class="c1"># Один файл</span>
+
+<span class="c1"># Цикл по всем файлам .flac в директории</span>
+<span class="k">for</span> i in *.flac<span class="p">;</span> <span class="k">do</span>
+    <span class="o">[</span> -f <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="nb">break</span>
+    metaflac --export-picture-to<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">i</span><span class="p">/.flac/.jpg</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="k">done</span>
 </pre></div>
 
 

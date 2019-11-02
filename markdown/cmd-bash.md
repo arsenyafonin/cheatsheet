@@ -137,6 +137,19 @@ AtomicParsley audiobook.m4b --artist "{author}" \ # Имя Фамилия авт
   --overWrite # Перезапись исходного файла
 ```
 
+## Работа с metaflac
+
+Экспорт обложек файлов .flac:
+``` bash
+metaflac --export-picture-to="cover.jpg" "file.flac" # Один файл
+
+# Цикл по всем файлам .flac в директории
+for i in *.flac; do
+    [ -f "$i" ] || break
+    metaflac --export-picture-to="${i/.flac/.jpg}" "$i"
+done
+```
+
 ## Работа с mediainfo
 
 Проверка параметров видеофайла производится по перечню параметров из txt-файла в&nbsp;той же директории или непосредственным заданием в параметре `--Inform=`.
