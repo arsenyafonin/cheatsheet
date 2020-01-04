@@ -15,11 +15,12 @@ import pandas as pd
 import requests
 from io import BytesIO
 
-pickle_url = 'https://example.com/pickle_file.pkl'
-r = requests.get(pickle_url).content
-
-df = pd.read_pickle(BytesIO(r), compression=None)
+pickle_url = 'http://127.0.0.1:5000/v1/get-s3-object?key=data/exports/courses.pkl'
+r = requests.get(pickle_url)
+if r.status_code == 200:
+    df = pd.read_pickle(BytesIO(r.content), compression=None)
 ```
+
 Импорт из .xlsx:
 ``` python
 from useful_functions import path

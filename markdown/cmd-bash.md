@@ -137,7 +137,7 @@ AtomicParsley audiobook.m4b --artist "{author}" \ # Имя Фамилия авт
   --overWrite # Перезапись исходного файла
 ```
 
-## Работа с metaflac
+## Работа с metaflac и shntool
 
 Экспорт обложек файлов .flac:
 ``` bash
@@ -148,6 +148,11 @@ for i in *.flac; do
     [ -f "$i" ] || break
     metaflac --export-picture-to="${i/.flac/.jpg}" "$i"
 done
+```
+
+Деление .flac-файла по .cue-sheet:
+``` bash
+shnsplit -f input.cue -o flac input.flac
 ```
 
 ## Работа с mediainfo

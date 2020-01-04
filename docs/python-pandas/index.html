@@ -707,10 +707,10 @@
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 
-<span class="n">pickle_url</span> <span class="o">=</span> <span class="s1">&#39;https://example.com/pickle_file.pkl&#39;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pickle_url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">pickle_url</span> <span class="o">=</span> <span class="s1">&#39;http://127.0.0.1:5000/v1/get-s3-object?key=data/exports/courses.pkl&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pickle_url</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
