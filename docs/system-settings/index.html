@@ -568,11 +568,23 @@ killall Dock
 <li>откройте папку с бэкапом базы конфигурации LaunchPad или найдите путь оригинальной папки в системе командой:<br />
 <code>echo $(find /private/var/folders -user $(id -u) -name com.apple.dock.launchpad 2&gt; /dev/null)/db</code></li>
 <li>откройте терминал в этой папке и запустите скрипт для чтения базы:<br />
-<code>sqlite3 db "SELECT parent_id, ordering, apps.title FROM items JOIN apps ON items.rowid = apps.item_id ORDER BY parent_id, ordering;"</code></li>
+<code>sqlite3 -separator ' | ' db "SELECT parent_id, ordering, apps.title, apps.item_id FROM items JOIN apps ON items.rowid = apps.item_id ORDER BY parent_id, ordering;"</code></li>
 </ol>
-<p>Все приложения LaunchPad будут сгруппированы по экранам или группам (первая колонка), порядок приложений внутри экрана/группы будет обозначен числом во второй. К сожалению, восстанавливать порядок по бэкапу базы данных не очень безопасно, поэтому в случае обнуления LaundPad порядок приложений придется восстанавливать вручную.</p>
-<p>Чтобы удалить приложение из базы используйте скрипт чтения базы, найдите название приложения, которую хотите удалить, а дальше запустите следующую команду с названием приложения вместо <code>APPNAME</code>:<br />
-<code>sqlite3 db "DELETE FROM apps WHERE title='APPNAME';" &amp;&amp; killall Dock</code></p>
+<p>Все приложения LaunchPad будут сгруппированы по экранам или группам (первая колонка), порядок приложений внутри экрана/группы будет обозначен числом во второй. Четвертая колонка — <code>item_id</code> приложения. К сожалению, восстанавливать порядок по бэкапу базы данных не очень безопасно, поэтому в случае обнуления LaundPad порядок приложений придется восстанавливать вручную.</p>
+<p>Чтобы удалить приложение из базы используйте скрипт чтения базы, найдите <code>item_id</code> приложения (<code>N</code>), которое хотите удалить, а дальше запустите следующую команду:<br />
+<code>sqlite3 db "DELETE FROM apps WHERE item_id = 'N';" &amp;&amp; killall Dock</code></p>
+<p>Для переименования проложений с длинными названиями, используйте <code>item_id</code> приложения (<code>N</code>) из скрипта чтения и следующую команду:<br />
+<code>sqlite3 db "UPDATE apps SET title = 'Photoshop CC 2019' WHERE item_id = 'N';" &amp;&amp; killall Dock</code></p>
+<hr />
+<p>Изменение параметров LaunchPad:</p>
+<ol>
+<li>измените количество рядов:<br />
+<code>defaults write com.apple.dock springboard-rows -int 6 &amp;&amp; killall Dock</code></li>
+<li>измените количество колонок:<br />
+<code>defaults write com.apple.dock springboard-columns -int 8 &amp;&amp; killall Dock</code></li>
+<li>устранить blur у фона:
+<code>defaults write com.apple.dock springboard-blur-radius -int 0 &amp;&amp; killall Dock</code> <em>(не работает)</em></li>
+</ol>
                 
                   
                 
