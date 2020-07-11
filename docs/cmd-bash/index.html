@@ -499,8 +499,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#magick" title="Работа с magick" class="md-nav__link">
-    Работа с magick
+  <a href="#magick-gifsicle" title="Работа с magick и gifsicle" class="md-nav__link">
+    Работа с magick и gifsicle
   </a>
   
 </li>
@@ -715,8 +715,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#magick" title="Работа с magick" class="md-nav__link">
-    Работа с magick
+  <a href="#magick-gifsicle" title="Работа с magick и gifsicle" class="md-nav__link">
+    Работа с magick и gifsicle
   </a>
   
 </li>
@@ -950,7 +950,7 @@ Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%&quot;
 </pre></div>
 
 
-<h2 id="magick">Работа с magick<a class="headerlink" href="#magick" title="Permanent link">&para;</a></h2>
+<h2 id="magick-gifsicle">Работа с magick и gifsicle<a class="headerlink" href="#magick-gifsicle" title="Permanent link">&para;</a></h2>
 <p>Конвертация .pdf в .png:</p>
 <div class="codehilite"><pre><span></span>magick convert -alpha off -density <span class="m">600</span> -resize x1080 -depth <span class="m">8</span> -quality <span class="m">85</span> input.pdf output.png
 </pre></div>
@@ -958,6 +958,16 @@ Video;Pixel Format: %ChromaSubsampling%\nColor Space: %ColorSpace%&quot;
 
 <p>Тест одной страницы:</p>
 <div class="codehilite"><pre><span></span>magick convert input.pdf<span class="o">[</span><span class="m">1</span><span class="o">]</span> output.png
+</pre></div>
+
+
+<p>Удаление каждого 2-го кадра в .gif с gifsicle:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Вычисление количества фреймов в переменную</span>
+<span class="nv">numframes</span><span class="o">=</span><span class="sb">`</span>identify -format <span class="s2">&quot;%n\n&quot;</span> input.gif <span class="p">|</span> head -1<span class="sb">`</span>
+<span class="c1"># Уменьшение на 1 для формирования корректной последовательности с seq</span>
+<span class="nv">numframes</span><span class="o">=</span><span class="sb">`</span>expr <span class="nv">$numframes</span> - <span class="m">1</span><span class="sb">`</span>
+<span class="c1"># Удаление каждого второго фрейма с gifsicle</span>
+gifsicle input.gif --delete <span class="k">$(</span>seq -f <span class="s2">&quot;#%g&quot;</span> <span class="m">1</span> <span class="m">2</span> <span class="nv">$numframes</span><span class="k">)</span> -o output.gif
 </pre></div>
 
 

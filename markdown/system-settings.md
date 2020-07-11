@@ -38,6 +38,17 @@ killall Dock
 
 ***
 
+Отключение бейджа оповещений у иконки в Dock:
+
+1. Найдите путь к базе данных системы оповещений командой:
+`echo $(find /private/var/folders -user $(id -u) -name com.apple.notificationcenter 2> /dev/null)/db`
+
+2. Найдите `bundleid` (`CFBundleIdentifier`) приложения в файле `Application.app/Contents/Info.plist`
+
+3. *Дальне не удалось реализовать изменения на уровне базы данных*
+
+***
+
 Изменение параметров LaunchPad:
 
 1. измените количество рядов:  
@@ -46,3 +57,19 @@ killall Dock
 `defaults write com.apple.dock springboard-columns -int 8 && killall Dock`
 3. устранить blur у фона:
 `defaults write com.apple.dock springboard-blur-radius -int 0 && killall Dock` *(не работает)*
+
+***
+
+### Модификация Box Drive (Mac OS)
+
+Измененение [лимита кэша](https://support.box.com/hc/en-us/articles/360043695894-Technical-Information-for-Box-Drive-Administrators) для Box Drive:
+
+1. `defaults write com.box.desktop MaximumCacheSize N`, где `N` — кол-во GB выделенных под кэш;
+2. завершить Box Drive и запустить его заново.
+
+Удаление иконки с рабочего стола и создание ссылки в Finder:
+
+1. скрыть икноку Box Drive:  
+`chflags hidden /Users/noideaatall/Box`
+2. создать symlink для бокового меню Finder:  
+`ln -s /Users/noideaatall/Box /Users/noideaatall/_box && killall Finder`

@@ -217,7 +217,7 @@ language: ru-RU
 ...
 ```
 
-## Работа с magick
+## Работа с magick и gifsicle
 
 Конвертация .pdf в .png:
 ``` bash
@@ -227,6 +227,16 @@ magick convert -alpha off -density 600 -resize x1080 -depth 8 -quality 85 input.
 Тест одной страницы:
 ``` bash
 magick convert input.pdf[1] output.png
+```
+
+Удаление каждого 2-го кадра в .gif с gifsicle:
+``` bash
+# Вычисление количества фреймов в переменную
+numframes=`identify -format "%n\n" input.gif | head -1`
+# Уменьшение на 1 для формирования корректной последовательности с seq
+numframes=`expr $numframes - 1`
+# Удаление каждого второго фрейма с gifsicle
+gifsicle input.gif --delete $(seq -f "#%g" 1 2 $numframes) -o output.gif
 ```
 
 ## Создание образа диска (Mac OS)
