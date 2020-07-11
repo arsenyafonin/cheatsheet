@@ -14,7 +14,7 @@ plan(multiprocess)
 source("airtable-functions.R")
 source("passchecker-functions.R")
 
-AT_TOKEN = "keyi3rdNkTBePnkDX"
+AT_TOKEN = "***************"
 
 # UI
 ui = fluidPage(
