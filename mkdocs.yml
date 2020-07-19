@@ -24,6 +24,7 @@ nav:
 - Приложения:
     - Atom: 'apps-atom.md'
     - AWS CLI: 'apps-aws-cli.md'
+    - Google Spreadsheets: 'apps-spreadsheets.md'
 
 # Documentation and theme
 theme:
