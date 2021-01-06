@@ -252,3 +252,10 @@ sudo diskutil unmount /dev/diskХ
 dd if=/dev/diskХ of=output.iso # Может занять до 30 минут
 diskutil eject /dev/diskX # Извлечение диска
 ```
+
+## Youtube-dl
+
+Скачивание видео с YouTube с youtube-dl:
+``` bash
+youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' '{FULL YOUTUBE URL}'
+```
