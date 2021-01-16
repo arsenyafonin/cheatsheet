@@ -1,4 +1,4 @@
-#### Установка AWS Command Line Interface на Windows
+### Установка AWS Command Line Interface на Windows
 
 1. Установить AWS CLI с помощью командной строки:  
  `Win + R`: `cmd` → cmd.exe: `pip install awscli --upgrade --user`
@@ -17,7 +17,7 @@ cmd.exe: `aws configure`
 
 ***
 
-#### Установка AWS Command Line Interface на Mac OS
+### Установка AWS Command Line Interface на Mac OS
 
 Все команды из инструкции ниже необходимо запускать в Terminal.
 
@@ -33,3 +33,17 @@ cmd.exe: `aws configure`
     2. AWS Secret Access Key: `password` сервиса *Amazon AWS CLI* в [*SC_ Links*](https://airtable.com/tblKcJTlBYbotdmxp/viwAvlWxjNVh18QNE)
     3. Default region name: `eu-central-1`
     4. Default output format > Skip
+
+### Использование
+
+Выдача всех путей по префиксу:
+
+``` bash
+aws s3api list-objects --bucket "BUCKET" --prefix "PREFIX" --query 'Contents[].Key'
+```
+
+Создание подписанного URL на 24 часа для скачивания:
+
+``` bash
+aws s3 presign 's3://arseny/movies/...' --expires-in 86400
+```

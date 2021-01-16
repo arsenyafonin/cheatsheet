@@ -550,6 +550,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="Использование" class="md-nav__link">
+    Использование
+  </a>
+  
+</li>
+      
       
       
       
@@ -610,6 +617,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="Использование" class="md-nav__link">
+    Использование
+  </a>
+  
+</li>
+      
       
       
       
@@ -631,7 +645,7 @@
                 
                   <h1>AWS CLI</h1>
                 
-                <h4 id="aws-command-line-interface-windows">Установка AWS Command Line Interface на Windows<a class="headerlink" href="#aws-command-line-interface-windows" title="Permanent link">&para;</a></h4>
+                <h3 id="aws-command-line-interface-windows">Установка AWS Command Line Interface на Windows<a class="headerlink" href="#aws-command-line-interface-windows" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Установить AWS CLI с помощью командной строки:<br />
 <code>Win + R</code>: <code>cmd</code> → cmd.exe: <code>pip install awscli --upgrade --user</code></li>
@@ -653,7 +667,7 @@ cmd.exe: <code>aws configure</code><ol>
 </li>
 </ol>
 <hr />
-<h4 id="aws-command-line-interface-mac-os">Установка AWS Command Line Interface на Mac OS<a class="headerlink" href="#aws-command-line-interface-mac-os" title="Permanent link">&para;</a></h4>
+<h3 id="aws-command-line-interface-mac-os">Установка AWS Command Line Interface на Mac OS<a class="headerlink" href="#aws-command-line-interface-mac-os" title="Permanent link">&para;</a></h3>
 <p>Все команды из инструкции ниже необходимо запускать в Terminal.</p>
 <ol>
 <li>Установить AWS CLI с помощью pip: <code>pip3 install awscli --upgrade --user</code></li>
@@ -671,6 +685,15 @@ cmd.exe: <code>aws configure</code><ol>
 </ol>
 </li>
 </ol>
+<h3 id="_1">Использование<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Выдача всех путей по префиксу:</p>
+<div class="codehilite"><pre><span></span>aws s3api list-objects --bucket <span class="s2">&quot;BUCKET&quot;</span> --prefix <span class="s2">&quot;PREFIX&quot;</span> --query <span class="s1">&#39;Contents[].Key&#39;</span>
+</pre></div>
+
+
+<p>Создание подписанного URL на 24 часа для скачивания:</p>
+<div class="codehilite"><pre><span></span>aws s3 presign <span class="s1">&#39;s3://arseny/movies/...&#39;</span> --expires-in <span class="m">86400</span>
+</pre></div>
                 
                   
                 

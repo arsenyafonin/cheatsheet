@@ -512,6 +512,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#youtube-dl" title="Youtube-dl" class="md-nav__link">
+    Youtube-dl
+  </a>
+  
+</li>
+      
       
       
       
@@ -736,6 +743,13 @@
         <li class="md-nav__item">
   <a href="#mac-os" title="Создание образа диска (Mac OS)" class="md-nav__link">
     Создание образа диска (Mac OS)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youtube-dl" title="Youtube-dl" class="md-nav__link">
+    Youtube-dl
   </a>
   
 </li>
@@ -993,6 +1007,12 @@ gifsicle input.gif --delete <span class="k">$(</span>seq -f <span class="s2">&qu
 <div class="codehilite"><pre><span></span>sudo diskutil unmount /dev/diskХ
 dd <span class="k">if</span><span class="o">=</span>/dev/diskХ <span class="nv">of</span><span class="o">=</span>output.iso <span class="c1"># Может занять до 30 минут</span>
 diskutil eject /dev/diskX <span class="c1"># Извлечение диска</span>
+</pre></div>
+
+
+<h2 id="youtube-dl">Youtube-dl<a class="headerlink" href="#youtube-dl" title="Permanent link">&para;</a></h2>
+<p>Скачивание видео с YouTube с youtube-dl:</p>
+<div class="codehilite"><pre><span></span>youtube-dl -f <span class="s1">&#39;bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best&#39;</span> <span class="s1">&#39;{FULL YOUTUBE URL}&#39;</span>
 </pre></div>
                 
                   
